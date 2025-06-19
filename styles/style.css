@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
 }
+
 body{
     font-family:"Source Sans 3",sans-serif;
     font-optical-sizing:auto;
@@ -26,8 +27,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 30vh;
-    width:30vh;
+    height: 50vh;
+    width:50vh;
     border-width:3vh;
     border-style: outset;
     border-color: #d3d3d3;
@@ -318,4 +319,10 @@ p{
   height: 6vh;
   width: 6vh;
   background-color: red;
+}
+.barsbycomputers {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
