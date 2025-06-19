@@ -310,7 +310,7 @@ p{
 .buttons {
   display:flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 3vh
 }
 .powerbutton {
@@ -319,11 +319,13 @@ p{
   height: 6vh;
   width: 6vh;
   background-color: red;
+  flex-grow:
 }
 .barsbycomputers {
+
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 2em;
+  font-weight: 4em;
   font-style: normal;
   padding-right: 10px;
 }
