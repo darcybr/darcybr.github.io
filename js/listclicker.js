@@ -122,11 +122,11 @@ function listClicker(id) {
             $('#maincontent').load('it8/it8-work.html #' + id);
             $(window).scrollTop(0);
                 break;
-        case "makecode"
+        case "makecode":
             $('#maincontent').load('it8/it8-work.html #' + id);
             $(window).scrollTop(0);
                 break;
-        case "moretinkercad"
+        case "moretinkercad":
             $('#maincontent').load('it8/it8-work.html #' + id);
             $(window).scrollTop(0);
                 break;
