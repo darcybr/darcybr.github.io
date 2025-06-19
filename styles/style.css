@@ -323,6 +323,7 @@ p{
 .barsbycomputers {
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 2em;
   font-style: normal;
+  padding-right: 10px;
 }
