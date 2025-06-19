@@ -13,19 +13,21 @@ body{
     display:flex;
     height: 100%;
     flex-direction: column;
+    justify-content:center;
 }
 .consolecontainer {
+  align-items: center;
     display:flex;
+    flex-direction: column;
     height: 100%;
-    justify-content:center;
     margin-top:8em;
 }
 .consolescreen {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 84vh;
-    width:49vw;
+    height: 60vh;
+    width:60vw;
     border-width:3vh;
     border-style: outset;
     border-color: #d3d3d3;
@@ -217,6 +219,11 @@ p{
 #logo {
     cursor:pointer;
 }
+.biggercontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .navbar_list_logo svg{
     width:5rem;
     transition:fill 250ms ease-in
@@ -287,3 +294,28 @@ p{
     background-color:#8D7F8F;
 }
 /*# sourceMappingURL=style.css.map */
+.pc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 28vh;
+    width:70vw;
+    border-width:0.5vh;
+    border-style: outset;
+    border-color: #d3d3d3;
+    background: radial-gradient(ellipse at bottom, #4e494900, transparent),
+                radial-gradient(ellipse at top, #edf1ef, transparent);
+}
+.buttons {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 3vh
+}
+.powerbutton {
+  padding: .5vh;
+  display: flex;
+  height: 6vh;
+  width: 6vh;
+  background-color: red;
+}
