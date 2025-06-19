@@ -26,8 +26,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 50vh;
-    width:50vw;
+    height: 30vh;
+    width:30vh;
     border-width:3vh;
     border-style: outset;
     border-color: #d3d3d3;
@@ -299,7 +299,7 @@ p{
     flex-direction: column;
     justify-content: flex-start;
     height: 25vh;
-    width:70vw;
+    width:50vw;
     border-width:0.5vh;
     border-style: outset;
     border-color: #d3d3d3;
