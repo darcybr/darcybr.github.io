@@ -188,37 +188,32 @@ function my_function() {
     counter += 1;
 
     if (counter == 100) {
+        if (r == 0 && g == 0 && b == 0) {
+            let newRand = Math.floor(Math.random() * 3);
+            switch (newRand) {
+                case 0:
+                    r += 1;
+                    break
+                case 1:
+                    b += 1;
+                    break
+                case 2:
+                    b += 1;
+                    break
+                }
+            }
 
         for (let i = 0; i < 500; i++){
-            if (r < 253) {
-                if ( g < 253) {
-                    if (b < 253 && r == 0 && g == 0) {
-                        b += 1;
-                    } else {
-                        b = 0;
-                    }
-                } else if (r == 0 && b == 0) {
-                    g += 1;
-                }
+            if (r < 253 && r > 0) {
+                r++;
             }
-            else if (g == 0 && b == 0) {
-                r += 1;
+            else if (g < 253 && g > 0) {
+                g++;
             }
-            if (r == 0 && g == 0 && b == 0) {
-                let newRand = Math.floor(Math.random() * 3);
-                switch (newRand) {
-                    case 0:
-                        r += 1;
-                        break
-                    case 1:
-                        b += 1;
-                        break
-                    case 2:
-                        b += 1;
-                        break
-                }
+            else if (b < 253 && b > 0) {
+                b++;
             }
-            document.getElementById('biggercontainer').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";            
+            document.getElementById('biggercontainer').style.backgroundColor = "rgb(${r},${g},${b})";
         }
     }
 }
