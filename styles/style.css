@@ -35,7 +35,10 @@ body{
     background: radial-gradient(ellipse at bottom, #0000, transparent),
                 radial-gradient(ellipse at top, #064721, transparent);
 }
-.helloworld{
+#cursor {
+    
+}
+#helloworld{
     display:flex;
     color: #66FF66;
     font-family: "Handjet", serif;
