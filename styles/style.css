@@ -220,7 +220,7 @@ p{
 #logo {
     cursor:pointer;
 }
-.biggercontainer {
+#biggercontainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
