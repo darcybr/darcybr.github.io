@@ -181,5 +181,39 @@ function my_function() {
         cursorDiv.style.display = 'none';
 
     }
-    
+    if (counter == 100) {
+        let r = 0;
+        let g = 0;
+        let b = 0;
+        for (i = 0; i < 500, i++;){
+            if (r < 253) {
+                if ( g < 253) {
+                    if (b < 253 && r == 0 && g == 0) {
+                        b += 1;
+                    }
+                else {
+                    b = 0;
+                }
+                }
+                else if (r == 0 && b == 0) {
+                    g += 1;
+                }
+            }
+            else if (g == 0 && b == 0) {
+                r += 1;
+            }
+            if (r == 0 && g == 0 && b == 0) {
+                let newRand = Math.random(0,2);
+                switch (newRand) {
+                    case 0:
+                        r += 1;
+                    case 1:
+                        b += 1;
+                    case 2:
+                        b += 1;
+                }
+            }
+            document.getElementById('biggercontainer').style.backgroundColor = (r,g,b);            
+        }
+    }
 }
