@@ -156,6 +156,12 @@ function listClicker(id) {
             $('#maincontent').load('c912/coursework.html #' + id);
             $(window).scrollTop(0);
                 break;
-
+// This is just for the power button
+        case "powerbtn":
+            // Placeholder for function
+            my_function();
 		}
+}
+function my_function() {
+    $('#biggercontainer').style.background = "white";
 }
