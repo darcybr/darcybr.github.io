@@ -183,10 +183,11 @@ function my_function() {
 
     }
     counter += 1;
+    let r = 0;
+    let g = 0;
+    let b = 0;
     if (counter == 100) {
-        let r = 0;
-        let g = 0;
-        let b = 0;
+
         for (i = 0; i < 500, i++;){
             if (r < 253) {
                 if ( g < 253) {
