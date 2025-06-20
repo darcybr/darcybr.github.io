@@ -175,7 +175,7 @@ function my_function() {
     else {
         screenDiv.style.backgroundColor = "black";
         textDiv.style.color = "black";
-        secondtextDiv.style.color = black;
+        secondtextDiv.style.color = 'black';
     }
     
 }
