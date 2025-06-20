@@ -167,10 +167,10 @@ function my_function() {
     let bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
 
     if (screenDiv.style.backgroundColor == "black"){
-        myDiv.style = bg;
+        screenDiv.style = bg;
     }
     else {
-        myDiv.style.backgroundColor = "black";
+        screenDiv.style.backgroundColor = "black";
     }
     
 }
