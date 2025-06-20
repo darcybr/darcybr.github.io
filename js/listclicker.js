@@ -162,6 +162,7 @@ function listClicker(id) {
             my_function();
 		}
 }
+let counter = 0;
 function my_function() {
     screenDiv = document.getElementById('consolescreen');
     textDiv = document.getElementById('helloworld');
@@ -181,6 +182,7 @@ function my_function() {
         cursorDiv.style.display = 'none';
 
     }
+    counter += 1;
     if (counter == 100) {
         let r = 0;
         let g = 0;
