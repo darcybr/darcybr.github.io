@@ -166,16 +166,19 @@ function my_function() {
     screenDiv = document.getElementById('consolescreen');
     textDiv = document.getElementById('helloworld');
     secondtextDiv = document.getElementById('othertext');
+    cursorDiv = document.getElementById('cursor');
     let screen_bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
     if (screenDiv.style.backgroundColor == "black"){
         screenDiv.style = screen_bg;
         textDiv.style.color = '#66FF66';
         secondtextDiv.style.color = '#66FF66';
+        cursorDiv.style.display = 'hide';
     }
     else {
         screenDiv.style.backgroundColor = "black";
         textDiv.style.color = "black";
         secondtextDiv.style.color = 'black';
+        cursorDiv.style.display = 'flex';
     }
     
 }
