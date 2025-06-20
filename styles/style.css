@@ -23,7 +23,7 @@ body{
     height: 100%;
     margin-top:8em;
 }
-.consolescreen {
+#consolescreen {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
