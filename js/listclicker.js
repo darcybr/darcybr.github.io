@@ -170,7 +170,7 @@ function my_function() {
     if (screenDiv.style.backgroundColor == "black"){
         screenDiv.style = screen_bg;
         textDiv.style.color = '#66FF66';
-        secondtextDiv = '#66FF66';
+        secondtextDiv.style.color = '#66FF66';
     }
     else {
         screenDiv.style.backgroundColor = "black";
