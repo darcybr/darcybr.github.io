@@ -36,9 +36,20 @@ body{
                 radial-gradient(ellipse at top, #064721, transparent);
 }
 #cursor {
-    
+
 }
 #helloworld{
+    display:flex;
+    color: #66FF66;
+    font-family: "Handjet", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "ELGR" 1,
+      "ELSH" 2;
+}
+#othertext{
     display:flex;
     color: #66FF66;
     font-family: "Handjet", serif;
