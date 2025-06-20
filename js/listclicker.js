@@ -163,5 +163,5 @@ function listClicker(id) {
 		}
 }
 function my_function() {
-    $('#biggercontainer').style.background = "white";
+    $('#biggercontainer').style.backgroundColor = "white";
 }
