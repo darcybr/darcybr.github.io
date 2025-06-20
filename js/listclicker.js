@@ -163,6 +163,9 @@ function listClicker(id) {
 		}
 }
 let counter = 0;
+let r = 0;
+let g = 0;
+let b = 0;
 function my_function() {
     screenDiv = document.getElementById('consolescreen');
     textDiv = document.getElementById('helloworld');
@@ -183,9 +186,7 @@ function my_function() {
 
     }
     counter += 1;
-    let r = 0;
-    let g = 0;
-    let b = 0;
+
     if (counter == 100) {
 
         for (i = 0; i < 500, i++;){
