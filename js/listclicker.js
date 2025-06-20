@@ -172,7 +172,7 @@ function my_function() {
         screenDiv.style = screen_bg;
         textDiv.style.color = '#66FF66';
         secondtextDiv.style.color = '#66FF66';
-        cursorDiv.style.display = 'hide';
+        cursorDiv.style.display = 'none';
     }
     else {
         screenDiv.style.backgroundColor = "black";
