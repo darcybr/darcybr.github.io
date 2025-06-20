@@ -165,7 +165,7 @@ function listClicker(id) {
 function my_function() {
     screenDiv = document.getElementById('consolescreen');
     textDiv = document.getElementById('helloworld');
-    secondtextDiv = document.getElementById('');
+    secondtextDiv = document.getElementById('othertext');
     let screen_bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
     if (screenDiv.style.backgroundColor == "black"){
         screenDiv.style = screen_bg;
