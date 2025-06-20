@@ -164,5 +164,11 @@ function listClicker(id) {
 }
 function my_function() {
     myDiv = document.getElementById('biggercontainer');
-    myDiv.style.backgroundColor = "white";
+    if (myDiv.style.backgroundColor == "white"){
+        myDiv.style.backgroundColor == "black"
+    }
+    else {
+        myDiv.style.backgroundColor = "white";
+    }
+    
 }
