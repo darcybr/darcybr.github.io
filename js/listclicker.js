@@ -164,14 +164,15 @@ function listClicker(id) {
 }
 function my_function() {
     screenDiv = document.getElementById('consolescreen');
-    screenDiv = document.getElementById('helloworld');
+    textDiv = document.getElementById('helloworld');
     let screen_bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
-    let text_bg = 'color: #66FF66;'
     if (screenDiv.style.backgroundColor == "black"){
-        screenDiv.style = bg;
+        screenDiv.style = screen_bg;
+        textDiv.style.color = '#66FF66';
     }
     else {
         screenDiv.style.backgroundColor = "black";
+        textDiv.style.color = "black";
     }
     
 }
