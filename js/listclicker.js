@@ -163,12 +163,14 @@ function listClicker(id) {
 		}
 }
 function my_function() {
-    myDiv = document.getElementById('biggercontainer');
-    if (myDiv.style.backgroundColor == "white"){
-        myDiv.style.backgroundColor = "black";
+    screenDiv = document.getElementById('consolescreen');
+    let bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
+
+    if (screenDiv.style.backgroundColor == "black"){
+        myDiv.style = bg;
     }
     else {
-        myDiv.style.backgroundColor = "white";
+        myDiv.style.backgroundColor = "black";
     }
     
 }
