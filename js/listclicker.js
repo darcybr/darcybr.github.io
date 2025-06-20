@@ -172,13 +172,14 @@ function my_function() {
         screenDiv.style = screen_bg;
         textDiv.style.color = '#66FF66';
         secondtextDiv.style.color = '#66FF66';
-        cursorDiv.style.display = 'none';
+        cursorDiv.style.display = 'flex';
     }
     else {
         screenDiv.style.backgroundColor = "black";
         textDiv.style.color = "black";
         secondtextDiv.style.color = 'black';
-        cursorDiv.style.display = 'flex';
+        cursorDiv.style.display = 'none';
+
     }
     
 }
