@@ -216,7 +216,7 @@ function my_function() {
                         b += 1;
                 }
             }
-            document.getElementById('biggercontainer').style.backgroundColor = (r,g,b);            
+            document.getElementById('biggercontainer').style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";            
         }
     }
 }
