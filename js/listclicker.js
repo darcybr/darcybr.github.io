@@ -163,5 +163,6 @@ function listClicker(id) {
 		}
 }
 function my_function() {
-    $('#biggercontainer').style.backgroundColor = "white";
+    myDiv = document.getElementById('#biggercontainer');
+    myDiv.style.backgroundColor = "white";
 }
