@@ -163,6 +163,6 @@ function listClicker(id) {
 		}
 }
 function my_function() {
-    myDiv = document.getElementById('#biggercontainer');
+    myDiv = document.getElementById('biggercontainer');
     myDiv.style.backgroundColor = "white";
 }
