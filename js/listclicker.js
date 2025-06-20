@@ -192,17 +192,16 @@ function my_function() {
             let newRand = Math.floor(Math.random() * 3);
             switch (newRand) {
                 case 0:
-                    r += 1;
+                    r = 1;
                     break
                 case 1:
-                    b += 1;
+                    g = 1;
                     break
                 case 2:
-                    b += 1;
+                    b = 1;
                     break
                 }
             }
-
         for (let i = 0; i < 500; i++){
             if (r < 253 && r > 0) {
                 r++;
