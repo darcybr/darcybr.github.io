@@ -420,3 +420,20 @@ p{
     color: var(--text-1);
     line-height: var(--font-lineheight-0);
 }
+.coursePanel {
+    background: var(--surface3);
+    box-shadow: var(--shadow-3);
+    padding: var(--size-fluid-3);
+    border-radius: var(--radius-2);
+}
+.courseText {
+    color: var(--text-2);
+    font-size: var(--font-size-4);
+    margin-block-end: var(--size-3);
+}
+.courseText h1 {
+    display: grid;
+    grid-template-columns: max-content;
+    color: var(--text-1);
+    line-height: var(--font-lineheight-0);
+}
