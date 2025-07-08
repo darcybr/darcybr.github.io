@@ -162,7 +162,6 @@ function listClicker(id) {
             my_function();
 		}
 }
-let flickerAllowed = true; 
 let counter = 0;
 let r = 0;
 let g = 0;
@@ -174,14 +173,12 @@ function my_function() {
     cursorDiv = document.getElementById('cursor');
     let screen_bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
     if (screenDiv.style.backgroundColor == "black"){
-        flickerAllowed = true;
         screenDiv.style = screen_bg;
         textDiv.style.color = '#66FF66';
         secondtextDiv.style.color = '#66FF66';
         cursorDiv.style.display = 'flex';
     }
     else {
-        flickerAllowed = false;
         screenDiv.style.backgroundColor = "black";
         textDiv.style.color = "black";
         secondtextDiv.style.color = 'black';
@@ -219,25 +216,3 @@ function my_function() {
         }
     }
 }
-// From ChatGPT, a timer and removing adding flicker on button press:
-document.addEventListener("DOMContentLoaded", () => {
-  const screen = document.getElementById("consolescreen");
-
-  function triggerFlicker() {
-    if (!flickerAllowed) return;
-
-    screen.classList.add("screenFlicker");
-
-    // Remove the flicker class after 300ms
-    setTimeout(() => {
-      screen.classList.remove("screenFlicker");
-
-      // Schedule the next flicker randomly between 15–45 seconds
-      const nextDelay = Math.floor(Math.random() * (45 - 15 + 1) + 15) * 1000;
-      setTimeout(triggerFlicker, nextDelay);
-    }, 300);
-  }
-
-  // Start first flicker 3 seconds after load
-  setTimeout(triggerFlicker, 3000);
-});
