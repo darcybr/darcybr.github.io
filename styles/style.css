@@ -402,3 +402,20 @@ p{
     filter: brightness(1);
   }
 }
+.tutorial {
+    color: var(--text-2);
+    font-size: var(--font-size-4);
+    margin-block-end: var(--size-3);
+}
+.tutorial h1 {
+    display: grid;
+    grid-template-columns: max-content;
+    color: var(--text-1);
+    line-height: var(--font-lineheight-0);
+}
+.tutorial h2 {    
+    display: grid;
+    grid-template-columns: max-content;
+    color: var(--text-1);
+    line-height: var(--font-lineheight-0);
+}
