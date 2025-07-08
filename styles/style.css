@@ -48,8 +48,12 @@ body{
   border-radius: 1vh;
   overflow: hidden;
 
-  animation: screenFlicker 1.5s infinite ease-in-out;
+
 }
+.screenFlicker {
+    animation: screenFlicker 1.5s infinite ease-in-out;
+}
+
 #cursor {
 
 }

@@ -234,11 +234,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const timeSinceFlicker = (now - lastFlickerTime) / 1000;
 
     if ((timeSinceFlicker >= 15 || timeSinceLoad >= 3)) {
-      screen.classList.add("flicker");
+      screen.classList.add("screenFlicker");
       lastFlickerTime = now;
 
       setTimeout(() => {
-        screen.classList.remove("flicker");
+        screen.classList.remove("screenFlicker");
       }, 300); // Duration of flicker effect
     }
   }
