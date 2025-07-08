@@ -427,13 +427,13 @@ p{
     border-radius: var(--radius-2);
 }
 .courseText {
-    color: var(--text-2);
+    color: var(--gray-7);
     font-size: var(--font-size-4);
     margin-block-end: var(--size-3);
 }
 .courseText h1 {
     display: grid;
     grid-template-columns: max-content;
-    color: var(--text-1);
+    color: var(--gray-8);
     line-height: var(--font-lineheight-0);
 }
