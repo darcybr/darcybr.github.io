@@ -158,7 +158,7 @@ function listClicker(id) {
                 break;
 // This is just for the power button
         case "powerbtn":
-            // Placeholder for function
+            // runs the function to change the background style on the screen and hide/show the text.
             my_function();
 		}
 }
@@ -173,12 +173,14 @@ function my_function() {
     cursorDiv = document.getElementById('cursor');
     let screen_bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
     if (screenDiv.style.backgroundColor == "black"){
+        flickerAllowed = true;
         screenDiv.style = screen_bg;
         textDiv.style.color = '#66FF66';
         secondtextDiv.style.color = '#66FF66';
         cursorDiv.style.display = 'flex';
     }
     else {
+        flickerAllowed = false;
         screenDiv.style.backgroundColor = "black";
         textDiv.style.color = "black";
         secondtextDiv.style.color = 'black';
@@ -216,3 +218,31 @@ function my_function() {
         }
     }
 }
+// From ChatGPT, a timer and removing adding flicker on button press:
+document.addEventListener("DOMContentLoaded", () => {
+  let flickerAllowed = true;
+  let lastFlickerTime = 0;
+  const screen = document.getElementById("consolescreen");
+  const powerButton = document.querySelector(".powerbutton");
+  const pageLoadTime = Date.now();
+
+  function triggerFlicker() {
+    if (!flickerAllowed) return;
+
+    const now = Date.now();
+    const timeSinceLoad = (now - pageLoadTime) / 1000;
+    const timeSinceFlicker = (now - lastFlickerTime) / 1000;
+
+    if ((timeSinceFlicker >= 15 || timeSinceLoad >= 3)) {
+      screen.classList.add("flicker");
+      lastFlickerTime = now;
+
+      setTimeout(() => {
+        screen.classList.remove("flicker");
+      }, 300); // Duration of flicker effect
+    }
+  }
+
+  // Check every second
+  setInterval(triggerFlicker, 1000);
+});
