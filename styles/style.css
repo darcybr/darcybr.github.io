@@ -51,8 +51,9 @@ body{
 
 }
 .screenFlicker {
-    animation: screenFlicker 1.5s infinite ease-in-out;
+  animation: screenFlicker 0.3s ease-in-out;
 }
+
 
 #cursor {
 

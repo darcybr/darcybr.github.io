@@ -226,23 +226,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const powerButton = document.querySelector(".powerbutton");
   const pageLoadTime = Date.now();
 
+document.addEventListener("DOMContentLoaded", () => {
+  let flickerAllowed = true;
+  const screen = document.getElementById("consolescreen");
+
   function triggerFlicker() {
     if (!flickerAllowed) return;
 
-    const now = Date.now();
-    const timeSinceLoad = (now - pageLoadTime) / 1000;
-    const timeSinceFlicker = (now - lastFlickerTime) / 1000;
+    screen.classList.add("screenFlicker");
 
-    if ((timeSinceFlicker >= 15 || timeSinceLoad >= 3)) {
-      screen.classList.add("screenFlicker");
-      lastFlickerTime = now;
+    // Remove the flicker class after 300ms
+    setTimeout(() => {
+      screen.classList.remove("screenFlicker");
 
-      setTimeout(() => {
-        screen.classList.remove("screenFlicker");
-      }, 300); // Duration of flicker effect
-    }
+      // Schedule the next flicker randomly between 15–45 seconds
+      const nextDelay = Math.floor(Math.random() * (45 - 15 + 1) + 15) * 1000;
+      setTimeout(triggerFlicker, nextDelay);
+    }, 300);
   }
 
-  // Check every second
-  setInterval(triggerFlicker, 1000);
+  // Start first flicker 3 seconds after load
+  setTimeout(triggerFlicker, 3000);
 });
