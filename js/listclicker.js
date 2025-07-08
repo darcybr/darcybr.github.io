@@ -162,6 +162,7 @@ function listClicker(id) {
             my_function();
 		}
 }
+let flickerAllowed = true; 
 let counter = 0;
 let r = 0;
 let g = 0;
@@ -220,7 +221,6 @@ function my_function() {
 }
 // From ChatGPT, a timer and removing adding flicker on button press:
 document.addEventListener("DOMContentLoaded", () => {
-  let flickerAllowed = true;
   let lastFlickerTime = 0;
   const screen = document.getElementById("consolescreen");
   const powerButton = document.querySelector(".powerbutton");
