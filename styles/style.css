@@ -49,6 +49,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    font-size: clamp(0.875em, 2.5vw, 1em);
     font-variation-settings:
       "ELGR" 1,
       "ELSH" 2;
@@ -60,6 +61,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    font-size: clamp(0.875em, 2.5vw, 1em);
     font-variation-settings:
       "ELGR" 1,
       "ELSH" 2;
@@ -343,7 +345,7 @@ p{
 
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
-  font-size: 4em;
+  font-size: clamp(2.5em, 5vw, 4em);
   font-style: normal;
   padding-right: 10px;
 }
