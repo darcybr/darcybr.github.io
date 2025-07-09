@@ -36,7 +36,7 @@ $(document).ready(function() {
             it9: 'it9.html',
             c912: 'c912.html',
             projects: 'projects.html',
-            weather_station: 'it8.html',
+            weather_station: 'https://darcybrennan.pythonanywhere.com',
         }
 
       if (cmd in validCommands) {
