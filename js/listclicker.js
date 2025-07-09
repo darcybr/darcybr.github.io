@@ -11,12 +11,46 @@ $(document).ready(function() {
 	else if (window.location.href == 'https://mrbrennan.website/it8.html' || window.location.href =='https://www.mrbrennan.website/it8.html'){
         $('#maincontent').load('it8-welcome.html');
     }
-    $('body').attr('tabindex', '0'); 
-    $('body').focus();
-    $('body').on('click', function () {
-    this.focus();
+  const inputField = $('#hiddenInput');
+  const display = $('#terminput');
+
+  // Autofocus the hidden input
+  inputField.focus();
+
+  // Refocus if clicked anywhere in terminal
+  $('#biggercontainer').on('click', function () {
+    inputField.focus();
   });
+
+  // Sync input to display
+  inputField.on('input', function () {
+    display.text(this.value);
+  });
+
+  // Handle Enter and Backspace
+  inputField.on('keydown', function (e) {
+    if (e.key === 'Enter') {
+        const cmd = this.value.trim();
+        const validCommands= {
+            it8: 'https://mrbrennan.website/it8.html',
+            it9: 'it9.html',
+            c912: 'c912.html',
+            projects: 'projects.html',
+            weather_station: 'it8.html',
+        }
+
+      if (cmd in validCommands) {
+        window.location.href = validCommands[cmd];
+      } else {
+        commandNotFound(`Command not found: ${cmd}`);
+      }
+      this.value = '';
+      display.text('');
+    }
+  });
+
 });
+
 function listClicker(id) {
 	switch(id) {
         case "logo":
@@ -219,31 +253,12 @@ function my_function() {
         }
     }
 }
-const inputBox = document.getElementById('terminput');
-const validCommands= {
-    it8: 'it8.html',
-    it9: 'it9.html',
-    c912: 'c912.html',
-    projects: 'projects.html',
-    weather_station: 'it8.html',
-}
-document.body.focus();
-    document.body.addEventListener('keydown', (e) => {
-      if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
-        inputBox.textContent += e.key;
-      } else if (e.key === 'Backspace') {
-        inputBox.textContent = inputBox.textContent.slice(0, -1);
-        e.preventDefault(); // Prevents browser from navigating back
-      } else if (e.key === 'Enter') {
-        const cmd = inputBox.textContent.trim();
-        if (cmd in validCommands) {
-          window.location.href = validCommands[cmd];
-        } else {
-          commandNotFound(`Command not found: ${cmd}`);
-        }
-        inputBox.textContent = '';
-      }
-    });
+
+
+
+
+
+
 
 function commandNotfound(text) {
   const messageDiv = document.getElementById('errormessage');

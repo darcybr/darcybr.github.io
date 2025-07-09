@@ -73,9 +73,10 @@ body{
 }
 
 .input-box {
-      flex-grow: 1;
-      outline: none;
-    }
+      min-width: 1ch;
+      flex: 0 1 auto;
+      white-space: pre;
+}
 
 #cursor {
 
