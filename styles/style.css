@@ -72,6 +72,10 @@ body{
   animation: screenFlicker 0.3s ease-in-out;
 }
 
+.input-box {
+      flex-grow: 1;
+      outline: none;
+    }
 
 #cursor {
 

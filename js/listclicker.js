@@ -216,3 +216,38 @@ function my_function() {
         }
     }
 }
+const inputBox = document.getElementById('terminput');
+const validCommands= {
+    it8: 'it8.html',
+    it9: 'it9.html',
+    c912: 'c912.html',
+    projects: 'projects.html',
+    weather_station: 'it8.html',
+}
+document.body.focus();
+    document.body.addEventListener('keydown', (e) => {
+      if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+        inputBox.textContent += e.key;
+      } else if (e.key === 'Backspace') {
+        inputBox.textContent = inputBox.textContent.slice(0, -1);
+        e.preventDefault(); // Prevents browser from navigating back
+      } else if (e.key === 'Enter') {
+        const cmd = inputBox.textContent.trim();
+        if (cmd in validCommands) {
+          window.location.href = validCommands[cmd];
+        } else {
+          commandNotFound(`Command not found: ${cmd}`);
+        }
+        inputBox.textContent = '';
+      }
+    });
+
+function commandNotfound(text) {
+  const messageDiv = document.getElementById('errormessage');
+  messageDiv.textContent = text;
+  messageDiv.style.display = 'block';
+
+  setTimeout(() => {
+    messageDiv.style.display = 'none';
+  }, 3000);
+}
