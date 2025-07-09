@@ -1,5 +1,3 @@
-//load the relevant section of a file into the maincontent div
-
 $(document).ready(function() {
     if (window.location.href == 'https://mrbrennan.website/c912.html' || window.location.href == 'https://www.mrbrennan.website/c912.html') {
         $('#maincontent').load('c912-welcome.html');
@@ -13,6 +11,11 @@ $(document).ready(function() {
 	else if (window.location.href == 'https://mrbrennan.website/it8.html' || window.location.href =='https://www.mrbrennan.website/it8.html'){
         $('#maincontent').load('it8-welcome.html');
     }
+    $('body').attr('tabindex', '0'); 
+    $('body').focus();
+    $('body').on('click', function () {
+    this.focus();
+  });
 });
 function listClicker(id) {
 	switch(id) {
