@@ -330,7 +330,6 @@ p{
 .navbar_list_item_drop li:hover,.navbar_list_item_drop li:focus{
     background-color:#8D7F8F;
 }
-/*# sourceMappingURL=style.css.map */
 .pc {
   display: flex;
   flex-direction: column;
@@ -421,19 +420,20 @@ p{
     line-height: var(--font-lineheight-0);
 }
 .coursePanel {
-    background: var(--surface3);
+    background: var(--surface-1);
     box-shadow: var(--shadow-3);
     padding: var(--size-fluid-3);
     border-radius: var(--radius-2);
 }
 .courseText {
-    color: var(--gray-7);
+    color: var(--text-1);
     font-size: var(--font-size-4);
     margin-block-end: var(--size-3);
 }
 .courseText h1 {
+
     display: grid;
     grid-template-columns: max-content;
-    color: var(--gray-8);
+    color: var(--text-2);
     line-height: var(--font-lineheight-0);
 }
