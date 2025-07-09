@@ -17,7 +17,7 @@ body{
 
 
 .site-text {
-    font-family: var(--font-sans-rounded);
+    font-family: var(--font-rounded-sans);
 }
 
 .container{
@@ -426,6 +426,7 @@ p{
     border-radius: var(--radius-2);
 }
 .courseText {
+    font-family: var(--font-rounded-sans);
     color: var(--text-1);
     font-size: var(--font-size-4);
     margin-block-end: var(--size-3);
