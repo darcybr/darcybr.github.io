@@ -73,9 +73,18 @@ body{
 }
 
 .input-box {
-      min-width: 1ch;
-      flex: 0 1 auto;
-      white-space: pre;
+    min-width: 1ch;
+    flex: 0 1 auto;
+    white-space: pre;
+    color: #66FF66;
+    font-family: "Handjet", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: clamp(0.875em, 2.5vw, 1em);
+    font-variation-settings:
+      "ELGR" 1,
+      "ELSH" 2;
 }
 
 #cursor {

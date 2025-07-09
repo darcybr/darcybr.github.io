@@ -260,7 +260,7 @@ function my_function() {
 
 
 
-function commandNotfound(text) {
+function commandNotFound(text) {
   const messageDiv = document.getElementById('errormessage');
   messageDiv.textContent = text;
   messageDiv.style.display = 'block';
