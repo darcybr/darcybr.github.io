@@ -207,14 +207,14 @@ p{
 }
 .linkitems {
 
-    height: 15vh; 
-    padding: 5vh;
-    background-color: whitesmoke;
+    padding: var(--size-fluid-1);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-3);
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius:.2rem;
     overflow-wrap: break-word;
-    color: #3D3B42;
+    color: var(--text-1);
     font-style: none;
     text-align: center;
 
