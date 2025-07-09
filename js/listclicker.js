@@ -48,8 +48,27 @@ $(document).ready(function() {
       display.text('');
     }
   });
-
+watchDoomStatus(() => alert("Doom!"));
 });
+
+function watchDoomStatus(onDoomActivated) {
+  async function checkStatus() {
+    try {
+      const response = await fetch('https://darcybrennan.pythonanywhere.com/status');
+      if (!response.ok) throw new Error('Network response was not ok');
+      const value = await response.text();
+
+      if (value.trim() === "1") {
+        onDoomActivated();
+      }
+    } catch (error) {
+      console.error('Error checking /status:', error);
+    }
+  }
+
+  // Poll every 2 seconds
+  setInterval(checkStatus, 2000);
+}
 
 function listClicker(id) {
 	switch(id) {
