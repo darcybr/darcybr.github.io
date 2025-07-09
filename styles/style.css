@@ -24,7 +24,23 @@ body{
     display:flex;
     height: 100%;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
+    background: var(--surface-1);
+    box-shadow: var(--shadow-3);
+    padding: var(--size-fluid-3);
+    border-radius: var(--radius-2);
+}
+.container h1 {
+    background: var(--surface-2);
+    box-shadow: var(--shadow-2);
+    padding: var(--size-fluid-3);
+    border-radius: var(--radius-2);
+}
+.container h2 {
+    background: var(--surface-3);
+    box-shadow: var(--shadow-3);
+    padding: var(--size-fluid-1);
+    border-radius: var(--radius-1);
 }
 .consolecontainer {
   align-items: center;
@@ -403,6 +419,7 @@ p{
   }
 }
 .tutorial {
+    font-family: var(--font-rounded-sans);
     color: var(--text-2);
     font-size: var(--font-size-4);
     margin-block-end: var(--size-3);
