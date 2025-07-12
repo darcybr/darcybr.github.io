@@ -72,7 +72,7 @@ function watchDoomStatus(onDoomActivated) {
 }
 
 function tron() {
-  const container = document.getElementById("console_screen");
+  const container = document.getElementById("consolescreen");
   container.innerHTML = "";
 
   const canvas = document.createElement("canvas");
