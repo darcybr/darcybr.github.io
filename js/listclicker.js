@@ -49,7 +49,7 @@ $(document).ready(function() {
       display.text('');
     }
   });
-watchDoomStatus(tron());
+watchDoomStatus(tron);
 });
 
 function watchDoomStatus(onDoomActivated) {
