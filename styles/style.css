@@ -48,15 +48,16 @@ body{
   align-items: center;
     display:flex;
     flex-direction: column;
-    height: 100%;
+    height: 75vh;
     margin-top:8em;
+    width: 60vh;
 }
+
 #consolescreen {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 50vh;
-  width: 33vw;
+  width: 60%;
   border: 3vh outset #d3d3d3;
   background: radial-gradient(ellipse at bottom, #00000033, transparent),
               radial-gradient(ellipse at top, #064721, transparent);
@@ -67,6 +68,17 @@ body{
   overflow: hidden;
 
 
+}
+.pc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  border: 0.5vh outset #d3d3d3;
+  background: radial-gradient(ellipse at bottom, #4e494900, transparent),
+              radial-gradient(ellipse at top, #edf1ef, transparent);
+  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1), 0 0.5vh 1vh rgba(0, 0, 0, 0.05);
+  border-radius: 1vh;
 }
 .screenFlicker {
   animation: screenFlicker 0.3s ease-in-out;
@@ -290,8 +302,11 @@ p{
 }
 #biggercontainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  height: 100%;
+  align-items: center;
+
 }
 .navbar_list_logo svg{
     width:5rem;
@@ -362,18 +377,7 @@ p{
 .navbar_list_item_drop li:hover,.navbar_list_item_drop li:focus{
     background-color:#8D7F8F;
 }
-.pc {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 25vh;
-  width: 50vw;
-  border: 0.5vh outset #d3d3d3;
-  background: radial-gradient(ellipse at bottom, #4e494900, transparent),
-              radial-gradient(ellipse at top, #edf1ef, transparent);
-  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1), 0 0.5vh 1vh rgba(0, 0, 0, 0.05);
-  border-radius: 1vh;
-}
+
 .buttons {
   display:flex;
   flex-direction: row;
