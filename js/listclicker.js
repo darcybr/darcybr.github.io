@@ -66,17 +66,15 @@ function watchDoomStatus(onDoomActivated) {
       const consoleScreen = document.getElementById("consolescreen");
 
       if (!consoleScreen) return;
-
       if (trimmedValue === "1" && !doomActive) {
-        // Save current HTML and activate doom
-        originalConsoleHTML = consoleScreen.innerHTML;
-        doomActive = true;
-        onDoomActivated(); // e.g., tron()
-      } else if (trimmedValue === "0" && doomActive) {
-        // Restore original content
-        consoleScreen.innerHTML = originalConsoleHTML;
-        doomActive = false;
-      }
+            const consoleScreen = document.getElementById("consolescreen");
+            if (consoleScreen) {
+                originalConsoleHTML = consoleScreen.innerHTML; // ✅ Save BEFORE tron()
+                doomActive = true;
+                onDoomActivated(); // runs tron(), which clears it
+            }
+        }
+
 
     } catch (error) {
       console.error('Error checking /status:', error);
