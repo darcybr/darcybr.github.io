@@ -262,6 +262,10 @@ function listClicker(id) {
             window.location.href = "https://mrbrennan.website/c912.html";
             $(window).scrollTop(0);
             break;
+        case "camp":
+            window.location.href = "https://mrbrennan.website/camp.html";
+            $(window).scrollTop(0);
+            break;
         case "it9":
             window.location.href = "https://mrbrennan.website/it9.html";
             $(window).scrollTop(0);
