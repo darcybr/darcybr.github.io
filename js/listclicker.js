@@ -53,22 +53,38 @@ watchDoomStatus(tron);
 });
 
 function watchDoomStatus(onDoomActivated) {
+  let doomActive = false;
+  let originalConsoleHTML = "";
+
   async function checkStatus() {
     try {
       const response = await fetch('https://darcybrennan.pythonanywhere.com/status');
       if (!response.ok) throw new Error('Network response was not ok');
       const value = await response.text();
 
-      if (value.trim() === "1") {
-        onDoomActivated();
+      const trimmedValue = value.trim();
+      const consoleScreen = document.getElementById("consolescreen");
+
+      if (!consoleScreen) return;
+
+      if (trimmedValue === "1" && !doomActive) {
+        // Save current HTML and activate doom
+        originalConsoleHTML = consoleScreen.innerHTML;
+        doomActive = true;
+        onDoomActivated(); // e.g., tron()
+      } else if (trimmedValue === "0" && doomActive) {
+        // Restore original content
+        consoleScreen.innerHTML = originalConsoleHTML;
+        doomActive = false;
       }
+
     } catch (error) {
       console.error('Error checking /status:', error);
     }
   }
 
-  // Poll every 2 seconds
-  setInterval(checkStatus, 2000);
+  // Poll every few seconds
+  setInterval(checkStatus, 3000);
 }
 
 function tron() {
@@ -401,14 +417,14 @@ function listClicker(id) {
 // This is just for the power button
         case "powerbtn":
             // runs the function to change the background style on the screen and hide/show the text.
-            my_function();
+            lightsOut();
 		}
 }
 let counter = 0;
 let r = 0;
 let g = 0;
 let b = 0;
-function my_function() {
+function lightsOut() {
     screenDiv = document.getElementById('consolescreen');
     textDiv = document.getElementById('helloworld');
     secondtextDiv = document.getElementById('othertext');
