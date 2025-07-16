@@ -291,6 +291,9 @@ p{
     gap:2rem;
     margin:0 2rem
 }
+.logoname {
+    fill: var(--text-1);
+}
 .navbar_list_logo{
     list-style:none;
     margin-right:auto;
