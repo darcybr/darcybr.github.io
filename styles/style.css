@@ -203,13 +203,13 @@ div.blinker {
     font-style: unset;
 }
 a{
-    color:#f1daf1
+    color:hsl(225, 37%, 37%)
 }
 a :hover{
-    color:#aed3fd
+    color:#04366f
 }
 a :visited{
-    color:#e8bae8
+    color:#e45a0a
 }
 p{
     padding:1em;
@@ -442,6 +442,7 @@ p{
     font-size: var(--font-size-4);
     margin-block-end: var(--size-3);
 }
+
 .tutorial h1 {
     display: grid;
     grid-template-columns: max-content;
