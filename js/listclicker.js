@@ -70,6 +70,9 @@ function watchDoomStatus(onDoomActivated) {
         originalConsoleHTML = consoleScreen.innerHTML; // Save BEFORE tron()
         doomActive = true;
         onDoomActivated(); // runs tron(), which clears it
+        } else if (data.field1 === "0" && doomActive) {
+            consoleScreen.innerHTML = originalConsoleHTML;
+            doomActive = false;
         }
     } catch (error) {
         console.error('Error checking status:', error);
