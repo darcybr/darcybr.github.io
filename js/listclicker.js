@@ -53,36 +53,32 @@ watchDoomStatus(tron);
 });
 
 function watchDoomStatus(onDoomActivated) {
-  let doomActive = false;
-  let originalConsoleHTML = "";
+    let doomActive = false;
+    let originalConsoleHTML = "";
 
-  async function checkStatus() {
+    async function checkStatus() {
     try {
-      const response = await fetch('https://darcybrennan.pythonanywhere.com/status');
-      if (!response.ok) throw new Error('Network response was not ok');
-      const value = await response.text();
+        const response = await fetch('https://darcybrennan.pythonanywhere.com/status');
+        if (!response.ok) throw new Error('Network response was not ok');
 
-      const trimmedValue = value.trim();
-      const consoleScreen = document.getElementById("consolescreen");
+        const data = await response.json(); // Parse as JSON
 
-      if (!consoleScreen) return;
-      if (trimmedValue === "1" && !doomActive) {
-            const consoleScreen = document.getElementById("consolescreen");
-            if (consoleScreen) {
-                originalConsoleHTML = consoleScreen.innerHTML; // ✅ Save BEFORE tron()
-                doomActive = true;
-                onDoomActivated(); // runs tron(), which clears it
-            }
+        const consoleScreen = document.getElementById("consolescreen");
+        if (!consoleScreen) return;
+
+        if (data.field1 === "1" && !doomActive) {
+        originalConsoleHTML = consoleScreen.innerHTML; // Save BEFORE tron()
+        doomActive = true;
+        onDoomActivated(); // runs tron(), which clears it
         }
-
-
     } catch (error) {
-      console.error('Error checking /status:', error);
+        console.error('Error checking status:', error);
     }
-  }
+    }
 
-  // Poll every few seconds
-  setInterval(checkStatus, 3000);
+
+    // Poll every few seconds
+    setInterval(checkStatus, 3000);
 }
 
 function tron() {
