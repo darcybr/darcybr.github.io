@@ -203,13 +203,13 @@ div.blinker {
     font-style: unset;
 }
 a{
-    color:hsl(225, 37%, 37%)
+    color:hsl(196.7, 68.4%, 48.4%)
 }
-a :hover{
+a:hover{
     color:#04366f
 }
-a :visited{
-    color:#e45a0a
+a:visited{
+    color:#0a72da
 }
 p{
     padding:1em;
