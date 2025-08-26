@@ -49,7 +49,8 @@ $(document).ready(function() {
       display.text('');
     }
   });
-watchDoomStatus(tron);
+// watchDoomStatus(tron); 
+// Removed tronning checker since it's just hammering pythonanywhere 
 });
 
 function watchDoomStatus(onDoomActivated) {
