@@ -486,6 +486,7 @@ p{
   max-width: 22rem;
   box-shadow: var(--shadow-2);
   font-family: var(--font-sans);
+  margin-top: 1vh;
 }
 
 .contact-card h2 {
