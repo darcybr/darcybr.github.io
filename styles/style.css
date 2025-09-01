@@ -478,3 +478,36 @@ p{
     color: var(--text-2);
     line-height: var(--font-lineheight-0);
 }
+.contact-card {
+  background: var(--surface-1);
+  border: 1px solid var(--surface-3);
+  border-radius: var(--radius-2);
+  padding: var(--size-3);
+  max-width: 22rem;
+  box-shadow: var(--shadow-2);
+  font-family: var(--font-sans);
+}
+
+.contact-card h2 {
+  font-size: var(--font-size-3);
+  margin-bottom: var(--size-2);
+  color: var(--text-1);
+}
+
+.contact-card p {
+  margin: var(--size-1) 0;
+  font-size: var(--font-size-2);
+  color: var(--text-2);
+}
+
+.contact-card span {
+  display: inline-block;
+}
+
+/* scramble order by default */
+.email span { display: none; }
+
+/* then reorder correctly with CSS content */
+.email::before {
+  content: "darcy.brennan@sd68.bc.ca";
+}
