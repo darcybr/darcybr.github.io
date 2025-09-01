@@ -463,6 +463,7 @@ p{
     box-shadow: var(--shadow-3);
     padding: var(--size-fluid-3);
     border-radius: var(--radius-2);
+    margin-top: 1vh;
 }
 .courseText {
     font-family: var(--font-rounded-sans);
