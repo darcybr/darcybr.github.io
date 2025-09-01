@@ -469,7 +469,7 @@ p{
     color: var(--text-1);
     font-size: var(--font-size-4);
     margin-block-end: var(--size-3);
-    max-inline-size: 80%;
+    max-inline-size: 100%;
 }
 .courseText h1 {
 
