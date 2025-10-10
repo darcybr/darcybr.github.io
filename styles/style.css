@@ -359,7 +359,7 @@ p{
     top:4rem;
     left:-1rem;
     box-shadow:0 0 10px gray;
-    background-color: var(--surface-2)
+    background-color: var(--surface-2);
     border-radius:.2rem;
     width:12rem;
     padding:1rem;
