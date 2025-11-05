@@ -1,0 +1,289 @@
+[gd_scene load_steps=14 format=3 uid="uid://1wyqr20d8avw"]
+
+[ext_resource type="Script" path="res://button.gd" id="1_3qqdo"]
+[ext_resource type="Script" path="res://prestige.gd" id="2_yhxyy"]
+[ext_resource type="Script" path="res://ScavengeLabel.gd" id="3_3ljtq"]
+[ext_resource type="Script" path="res://FireButton.gd" id="3_q1iyy"]
+[ext_resource type="Script" path="res://ash.gd" id="4_sh6rw"]
+[ext_resource type="Script" path="res://flint.gd" id="5_sx534"]
+[ext_resource type="Script" path="res://mine.gd" id="6_4lkhs"]
+[ext_resource type="Script" path="res://stone.gd" id="7_gaj74"]
+[ext_resource type="Script" path="res://dirt.gd" id="8_2w2ml"]
+[ext_resource type="Script" path="res://gold.gd" id="9_p24nm"]
+[ext_resource type="Script" path="res://iron.gd" id="10_6auqh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th2k7"]
+bg_color = Color(0.305882, 0.490196, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q23xl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="Game" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1144.0
+offset_bottom = 650.0
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect2"]
+layout_mode = 0
+offset_right = 157.0
+offset_bottom = 47.0
+text = "-------Resources--------"
+
+[node name="Explore" type="Button" parent="."]
+modulate = Color(4.90934e-06, 0.800192, 0.135536, 1)
+top_level = true
+light_mask = 2
+visibility_layer = 2
+offset_right = 493.0
+offset_bottom = 180.0
+scale = Vector2(0.212922, 0.222918)
+theme_override_font_sizes/font_size = 65
+text = "Explore
+"
+script = ExtResource("1_3qqdo")
+
+[node name="ExploreProgress" type="ProgressBar" parent="Explore"]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 0
+offset_top = 179.438
+offset_right = 2313.0
+offset_bottom = 360.438
+scale = Vector2(0.213202, 0.225893)
+theme_override_styles/fill = SubResource("StyleBoxFlat_th2k7")
+show_percentage = false
+
+[node name="LvlProgress" type="ProgressBar" parent="Explore"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 127.0
+offset_top = 260.0
+offset_right = 203.0
+offset_bottom = 329.0
+scale = Vector2(2.84375, 2.61339)
+theme_override_colors/font_color = Color(0.963551, 0.73171, 3.85046e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 34
+theme_override_styles/background = SubResource("StyleBoxFlat_q23xl")
+
+[node name="PrestigeProgress" type="ProgressBar" parent="Explore"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 1023.85
+offset_top = 22.4298
+offset_right = 1056.85
+offset_bottom = 67.4298
+scale = Vector2(2.81439, 2.70631)
+
+[node name="PrestigeExplore" type="Label" parent="Explore"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 497.835
+offset_top = 76.2612
+offset_right = 507.835
+offset_bottom = 99.2612
+scale = Vector2(3.3729, 4.05037)
+text = "P"
+
+[node name="LvlExplore" type="Label" parent="Explore"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 497.835
+offset_top = -4.48595
+offset_right = 506.835
+offset_bottom = 18.514
+scale = Vector2(3.9936, 3.82761)
+text = "L"
+
+[node name="ExploreTime" type="Timer" parent="Explore"]
+unique_name_in_owner = true
+autostart = true
+
+[node name="Prestige" type="Button" parent="Explore"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2160.42
+offset_top = 1202.24
+offset_right = 3019.42
+offset_bottom = 1435.24
+theme_override_font_sizes/font_size = 90
+text = "Prestige"
+script = ExtResource("2_yhxyy")
+
+[node name="Label" type="Label" parent="Explore"]
+layout_mode = 0
+offset_left = 2136.93
+offset_top = 1579.06
+offset_right = 3060.93
+offset_bottom = 1785.06
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Atuo-Clicker recommended"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wood" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 1033.0
+offset_top = 66.0
+offset_right = 1096.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.729412, 0.356863, 0.356863, 1)
+theme_override_font_sizes/font_size = 11
+text = "Placeholder"
+script = ExtResource("3_3ljtq")
+
+[node name="FireBuy" type="Button" parent="."]
+offset_left = 227.0
+offset_top = 1.0
+offset_right = 283.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 10
+text = "Make Fire
+10 wood
+5 flint
+"
+script = ExtResource("3_q1iyy")
+
+[node name="Ash" type="Label" parent="FireBuy"]
+modulate = Color(0.205117, 0.205117, 0.205117, 1)
+layout_mode = 0
+offset_left = 60.0
+offset_right = 154.0
+offset_bottom = 23.0
+text = "PlaceHolder
+"
+script = ExtResource("4_sh6rw")
+
+[node name="AshTime" type="Timer" parent="FireBuy/Ash"]
+unique_name_in_owner = true
+wait_time = 50.0
+autostart = true
+
+[node name="TimeAshLeft" type="Label" parent="FireBuy/Ash"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = 29.0
+offset_right = 66.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 11
+text = "PlaceHolder"
+max_lines_visible = 1
+visible_characters = 2
+visible_ratio = 0.272727
+
+[node name="TimeOver" type="Label" parent="FireBuy/Ash"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -1.0
+offset_top = 43.0
+offset_right = 62.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 11
+text = "5
+"
+
+[node name="Flint" type="Label" parent="."]
+offset_left = 1033.0
+offset_top = 80.0
+offset_right = 1096.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "Placeholder"
+script = ExtResource("5_sx534")
+
+[node name="Mine" type="Button" parent="."]
+offset_top = 117.0
+offset_right = 105.0
+offset_bottom = 148.0
+theme_override_colors/font_hover_color = Color(0.640627, 0.833538, 0.931812, 1)
+theme_override_colors/font_pressed_color = Color(0.639216, 0.835294, 0.933333, 1)
+theme_override_colors/font_color = Color(0.639216, 0.835294, 0.933333, 1)
+text = "Mine"
+script = ExtResource("6_4lkhs")
+
+[node name="Stone" type="Label" parent="Mine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 43.0
+offset_right = 1103.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.419813, 0.419813, 0.419813, 1)
+theme_override_font_sizes/font_size = 11
+text = "SPlaceholder"
+max_lines_visible = 100
+script = ExtResource("7_gaj74")
+
+[node name="Dirt" type="Label" parent="Mine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 28.0
+offset_right = 1105.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.598148, 0.364651, 0.247904, 1)
+theme_override_font_sizes/font_size = 11
+text = "DPlaceholder
+"
+script = ExtResource("8_2w2ml")
+
+[node name="Gold" type="Label" parent="Mine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 72.0
+offset_right = 1105.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.728279, 0.620979, 0.277828, 1)
+theme_override_font_sizes/font_size = 11
+text = "Gplcaeholder
+"
+script = ExtResource("9_p24nm")
+
+[node name="Iron" type="Label" parent="Mine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 57.0
+offset_right = 1105.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.581033, 0.581033, 0.581033, 1)
+theme_override_font_sizes/font_size = 11
+text = "IPlaceholder"
+script = ExtResource("10_6auqh")
+
+[node name="Cost" type="Label" parent="Mine"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 33.0
+offset_right = 100.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 0.372549, 0, 1)
+text = "Placeholder"
+
+[connection signal="pressed" from="Explore" to="Wood" method="_on_explore_pressed"]
+[connection signal="pressed" from="Explore" to="Flint" method="_on_explore_pressed"]
+[connection signal="timeout" from="Explore/ExploreTime" to="Explore" method="_on_timer_timeout"]
+[connection signal="pressed" from="Explore/Prestige" to="Explore" method="_on_prestige_pressed"]
+[connection signal="pressed" from="FireBuy" to="FireBuy/Ash" method="_on_fire_buy_pressed"]
+[connection signal="timeout" from="FireBuy/Ash/AshTime" to="FireBuy/Ash" method="_on_ash_time_timeout"]
