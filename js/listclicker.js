@@ -39,10 +39,19 @@ $(document).ready(function() {
             projects: 'projects.html',
             weather_station: 'https://darcybrennan.pythonanywhere.com',
         }
-
+        const secretCommands = [
+            "secret",
+            "67"
+        ]
       if (cmd in validCommands) {
         window.location.href = validCommands[cmd];
-      } else {
+      } 
+      else if (cmd in secretCommands) {
+        //Change Text Here...
+        quoteHTML = 'For what you see and what you hear depends a good deal on where you are standing. It also depends on what kind of person you are.<br> - C.S. Lewis'
+        consoleScreen.innerHTML = quoteHTML;
+      }
+      else {
         commandNotFound(`Command not found: ${cmd}`);
       }
       this.value = '';
