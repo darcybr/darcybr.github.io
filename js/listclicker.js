@@ -43,7 +43,7 @@ $(document).ready(function() {
             "secret",
             "67"
         ]
-      if (cmd in validCommands) {
+      if (secretCommands.includes(cmd)) {
         window.location.href = validCommands[cmd];
       } 
       else if (cmd in secretCommands) {
