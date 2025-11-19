@@ -55,7 +55,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 60vw;
+  width: 25vw;
   height: 45vh;
   border: 3vh outset #d3d3d3;
   background: radial-gradient(ellipse at bottom, #00000033, transparent),
