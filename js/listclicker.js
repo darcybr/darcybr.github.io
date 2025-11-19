@@ -41,14 +41,20 @@ $(document).ready(function() {
         }
         const secretCommands = [
             "secret",
+        ]
+        const superSecretCommands = [
             "67"
         ]
-      if (secretCommands.includes(cmd)) {
+      if (cmd in validCommands) {
         window.location.href = validCommands[cmd];
       } 
-      else if (cmd in secretCommands) {
+      else if (secretCommands.includes(cmd)) {
         //Change Text Here...
         quoteHTML = 'For what you see and what you hear depends a good deal on where you are standing. It also depends on what kind of person you are.<br> - C.S. Lewis'
+        consoleScreen.innerHTML = quoteHTML;
+      }
+      else if (superSecretCommands.includes(cmd)) {
+        quoteHTML = 'GO AWAY - Mr. B'
         consoleScreen.innerHTML = quoteHTML;
       }
       else {
