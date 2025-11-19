@@ -45,12 +45,13 @@ $(document).ready(function() {
         const superSecretCommands = [
             "67"
         ]
+      consoleScreen = document.getElementById("helloworld")
       if (cmd in validCommands) {
         window.location.href = validCommands[cmd];
       } 
       else if (secretCommands.includes(cmd)) {
         //Change Text Here...
-        quoteHTML = 'For what you see and what you hear depends a good deal on where you are standing. It also depends on what kind of person you are.<br> - C.S. Lewis'
+        quoteHTML = 'For what you see and what <br>you hear depends a good deal <br>on where you are standing.<br> It also depends on what <br>kind of person you are.<br> - C.S. Lewis'
         consoleScreen.innerHTML = quoteHTML;
       }
       else if (superSecretCommands.includes(cmd)) {
