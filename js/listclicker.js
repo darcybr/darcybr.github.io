@@ -79,7 +79,7 @@ function watchDoomStatus(onDoomActivated) {
 
         const data = await response.json(); // Parse as JSON
 
-        const consoleScreen = document.getElementById("consolescreen");
+        const consoleScreen = document.getElementById("helloworld");
         if (!consoleScreen) return;
 
         if (data.field1 === "1" && !doomActive) {
