@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 200 30% 97%;
+    --foreground: 214 28% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 28% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 28% 15%;
+
+    --primary: 218 82% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 208 35% 92%;
+    --secondary-foreground: 214 28% 15%;
+
+    --muted: 205 30% 93%;
+    --muted-foreground: 214 14% 38%;
+
+    --accent: 210 80% 94%;
+    --accent-foreground: 214 28% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 28% 85%;
+    --input: 210 28% 85%;
+    --ring: 218 82% 48%;
+
+    --arena-floor: 198 35% 90%;
+    --obstacle: 212 14% 62%;
+    --obstacle-edge: 214 20% 45%;
+    --player-one: 211 88% 52%;
+    --player-one-soft: 212 92% 88%;
+    --player-one-shield: 211 88% 52% / 0.25;
+    --player-two: 2 80% 56%;
+    --player-two-soft: 5 92% 88%;
+    --player-two-shield: 2 80% 56% / 0.25;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 24% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 22% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 22% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 211 88% 58%;
+    --primary-foreground: 222 40% 10%;
+
+    --secondary: 217 24% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 24% 18%;
+    --muted-foreground: 214 18% 74%;
+
+    --accent: 217 24% 18%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 20% 24%;
+    --input: 217 20% 24%;
+    --ring: 211 88% 58%;
+    --arena-floor: 219 28% 15%;
+    --obstacle: 216 14% 34%;
+    --obstacle-edge: 216 14% 47%;
+    --player-one: 211 88% 58%;
+    --player-one-soft: 213 62% 25%;
+    --player-one-shield: 211 88% 58% / 0.25;
+    --player-two: 2 84% 62%;
+    --player-two-soft: 2 44% 28%;
+    --player-two-shield: 2 84% 62% / 0.25;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .fill-arena-floor {
+    fill: hsl(var(--arena-floor));
+  }
+
+  .fill-obstacle {
+    fill: hsl(var(--obstacle));
+  }
+
+  .stroke-obstacle-edge {
+    stroke: hsl(var(--obstacle-edge));
+  }
+
+  .fill-player-one {
+    fill: hsl(var(--player-one));
+  }
+
+  .bg-player-one {
+    background-color: hsl(var(--player-one));
+  }
+
+  .stroke-player-one {
+    stroke: hsl(var(--player-one));
+  }
+
+  .fill-player-one-soft {
+    fill: hsl(var(--player-one-soft));
+  }
+
+  .fill-player-one-shield {
+    fill: hsl(var(--player-one-shield));
+  }
+
+  .fill-player-two {
+    fill: hsl(var(--player-two));
+  }
+
+  .bg-player-two {
+    background-color: hsl(var(--player-two));
+  }
+
+  .stroke-player-two {
+    stroke: hsl(var(--player-two));
+  }
+
+  .fill-player-two-soft {
+    fill: hsl(var(--player-two-soft));
+  }
+
+  .fill-player-two-shield {
+    fill: hsl(var(--player-two-shield));
+  }
+
+  .arena-shell {
+    background-image:
+      radial-gradient(circle at 20% 25%, hsl(var(--player-one) / 0.1), transparent 40%),
+      radial-gradient(circle at 80% 75%, hsl(var(--player-two) / 0.1), transparent 40%);
+  }
+
+  .shield-glow {
+    animation: shield-pulse 1.1s ease-in-out infinite;
+  }
+}
+
+@keyframes shield-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
