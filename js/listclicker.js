@@ -11,6 +11,15 @@ $(document).ready(function() {
 	else if (window.location.href == 'https://mrbrennan.website/it8.html' || window.location.href =='https://www.mrbrennan.website/it8.html'){
         $('#maincontent').load('it8-welcome.html');
     }
+
+  // Make elements with role="button" (nav items, power button) keyboard-operable
+  $('[role="button"]').on('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      this.click();
+    }
+  });
+
   const inputField = $('#hiddenInput');
   const display = $('#terminput');
 
@@ -45,17 +54,17 @@ $(document).ready(function() {
         const superSecretCommands = [
             "67"
         ]
-      consoleScreen = document.getElementById("helloworld")
+      const consoleScreen = document.getElementById("helloworld");
       if (cmd in validCommands) {
         window.location.href = validCommands[cmd];
       } 
       else if (secretCommands.includes(cmd)) {
         //Change Text Here...
-        quoteHTML = 'For what you see and what you hear depends a good deal on where you are standing. It also depends on what kind of person you are. - C.S. Lewis'
+        const quoteHTML = 'For what you see and what you hear depends a good deal on where you are standing. It also depends on what kind of person you are. - C.S. Lewis';
         consoleScreen.innerHTML = quoteHTML;
       }
       else if (superSecretCommands.includes(cmd)) {
-        quoteHTML = 'GO AWAY - Mr. B'
+        const quoteHTML = 'GO AWAY - Mr. B';
         consoleScreen.innerHTML = quoteHTML;
       }
       else {
@@ -281,168 +290,61 @@ function tron() {
   requestAnimationFrame(render);
 }
 
+// Pages that navigate directly (top-level nav items)
+const pageNav = {
+    logo: 'https://mrbrennan.website/index.html',
+    c912: 'https://mrbrennan.website/c912.html',
+    camp: 'https://mrbrennan.website/camp.html',
+    it9: 'https://mrbrennan.website/it9.html',
+    it8: 'https://mrbrennan.website/it8.html',
+    projects: 'https://mrbrennan.website/projects.html',
+};
+
+// Coursework topics loaded into #maincontent from c912/coursework.html
+const c912Topics = [
+    'files', 'hdrive', 'hardware', 'software', 'foss', 'html', 'adobelearn',
+    'codeorg', 'vscodesetup', 'pythonintro', 'pythonchatbot', 'hackclub',
+    '3ddesign', 'illustrator', 'electronics', 'python', 'godot', 'csharp',
+    'beyond', 'smart', 'labwork', 'exploration', 'majorprojects'
+];
+
+// Coursework topics loaded into #maincontent from it8/it8-work.html
+const it8Topics = [
+    'nametag', 'makecode', 'moretinkercad', 'pythonminecraft', 'godotgameone'
+];
 
 function listClicker(id) {
-	switch(id) {
-        case "logo":
-            window.location.href = "https://mrbrennan.website/index.html";
-            $(window).scrollTop(0);
-            break;
-        case "c912":
-            window.location.href = "https://mrbrennan.website/c912.html";
-            $(window).scrollTop(0);
-            break;
-        case "camp":
-            window.location.href = "https://mrbrennan.website/camp.html";
-            $(window).scrollTop(0);
-            break;
-        case "it9":
-            window.location.href = "https://mrbrennan.website/it9.html";
-            $(window).scrollTop(0);
-            break;
-        case "it8":
-            window.location.href = "https://mrbrennan.website/it8.html";
-            $(window).scrollTop(0);
-            break;			
-        case "projects":
-            window.location.href = "https://mrbrennan.website/projects.html";
-            $(window).scrollTop(0);
-            break;
-        case "logo":
-            $('#maincontent').load('c912/welcome.html');
-            $(window).scrollTop(0);
-            break;
-		case "files":
-			$('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-			break;
-    	case "hdrive":
-			$('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-			break;    
-        case "hardware":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "software":
-			$('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-			break;
-        case "foss":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "html":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "adobelearn":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "codeorg":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "vscodesetup":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "pythonintro":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "pythonchatbot":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-// Beginning of Choice Section
-        case "hackclub":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "3ddesign":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "illustrator":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "electronics":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "python":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "godot":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "csharp":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "beyond":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-// Grade 8 Only Assignments
-        case "nametag":
-            $('#maincontent').load('it8/it8-work.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "makecode":
-            $('#maincontent').load('it8/it8-work.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "moretinkercad":
-            $('#maincontent').load('it8/it8-work.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "pythonminecraft":
-            $('#maincontent').load('it8/it8-work.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "godotgameone":
-            $('#maincontent').load('it8/it8-work.html #' + id);
-            $(window).scrollTop(0);
-                break;
-
-// Beginning of Project Section
-        case "smart":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "labwork":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "exploration":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-        case "majorprojects":
-            $('#maincontent').load('c912/coursework.html #' + id);
-            $(window).scrollTop(0);
-                break;
-// This is just for the power button
-        case "powerbtn":
-            // runs the function to change the background style on the screen and hide/show the text.
-            lightsOut();
-		}
+    if (id === 'powerbtn') {
+        // runs the function to change the background style on the screen and hide/show the text.
+        lightsOut();
+        return;
+    }
+    if (id in pageNav) {
+        window.location.href = pageNav[id];
+        $(window).scrollTop(0);
+        return;
+    }
+    if (c912Topics.includes(id)) {
+        $('#maincontent').load('c912/coursework.html #' + id);
+        $(window).scrollTop(0);
+        return;
+    }
+    if (it8Topics.includes(id)) {
+        $('#maincontent').load('it8/it8-work.html #' + id);
+        $(window).scrollTop(0);
+        return;
+    }
 }
+
 let counter = 0;
 let r = 0;
 let g = 0;
 let b = 0;
 function lightsOut() {
-    screenDiv = document.getElementById('consolescreen');
-    textDiv = document.getElementById('helloworld');
-    secondtextDiv = document.getElementById('othertext');
-    cursorDiv = document.getElementById('cursor');
+    const screenDiv = document.getElementById('consolescreen');
+    const textDiv = document.getElementById('helloworld');
+    const secondtextDiv = document.getElementById('othertext');
+    const cursorDiv = document.getElementById('cursor');
     let screen_bg = 'background: radial-gradient(ellipse at bottom, #000000, transparent), radial-gradient(ellipse at top, #064721, transparent);'
     if (screenDiv.style.backgroundColor == "black"){
         screenDiv.style = screen_bg;
@@ -484,16 +386,10 @@ function lightsOut() {
             else if (b < 253 && b > 0) {
                 b++;
             }
-            document.getElementById('biggercontainer').style.backgroundColor = "rgb(${r},${g},${b})";
+            document.getElementById('biggercontainer').style.backgroundColor = `rgb(${r},${g},${b})`;
         }
     }
 }
-
-
-
-
-
-
 
 function commandNotFound(text) {
   const messageDiv = document.getElementById('errormessage');
