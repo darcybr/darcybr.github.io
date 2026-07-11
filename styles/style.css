@@ -101,19 +101,7 @@ body{
 #cursor {
 
 }
-#helloworld{
-    display:flex;
-    color: #66FF66;
-    font-family: "Handjet", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-size: clamp(0.875em, 2.5vw, 1em);
-    font-variation-settings:
-      "ELGR" 1,
-      "ELSH" 2;
-}
-#othertext{
+#helloworld, #othertext {
     display:flex;
     color: #66FF66;
     font-family: "Handjet", serif;
@@ -513,4 +501,25 @@ p{
 /* then reorder correctly with CSS content */
 .email::before {
   content: "darcy.brennan@sd68.bc.ca";
+}
+
+.error-message {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #f33;
+    padding: 0.5rem 1rem;
+    border: 1px solid #f33;
+    font-family: monospace;
+    display: none;
+    border-radius: 4px;
+}
+
+.navbar_list_item:focus-visible,
+.navbar_list_logo:focus-visible,
+.powerbutton:focus-visible {
+    outline: 2px solid #4da6ff;
+    outline-offset: 2px;
 }
