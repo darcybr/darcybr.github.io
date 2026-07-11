@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html data-theme="dark">
+<html lang="en" data-theme="dark">
 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mr. Brennan | Computer Science</title>
+		<meta name="description" content="Mr. Brennan's computer science classroom site: Computers 9-12, IT 8, IT 9, class projects, and the weather station.">
 		<!--
 		"When you keep searching for ways to change your situation for the better, you stand a chance of finding them. When you stop searching, assuming they can't be found, you guarantee they won't"
 		- Angela Duckworth 
@@ -23,7 +27,7 @@
 	<body tabindex="0">
 			<nav class="mrbnavbar">
 				<ul class="navbar_list">
-					<li class="navbar_list_logo" id="logo" onClick="listClicker(this.id)">
+					<li class="navbar_list_logo" id="logo" tabindex="0" role="button" aria-label="Home" onClick="listClicker(this.id)">
 						<svg viewBox="50 50 50 25" xmlns="http://www.w3.org/2000/svg" aria-label="MRB Logo" role="img" class="logoname"> 
 							<g stroke-width=".26458">
 								<path d="m54.872 55.49h-3.906v16.053h2.9803v-4.3801l-0.29351-7.5635 3.906 11.944h2.032l3.8834-11.966-0.27093 7.5861v4.3801h2.9803v-16.053h-3.9285l-3.6576 11.65z"/>
@@ -32,27 +36,15 @@
 							</g>
 						</svg>
 					</li>
-					<li class="navbar_list_item" id="c912" onClick="listClicker(this.id)">Computers 9-12</li>
-					<li class="navbar_list_item" id="it8" onClick="listClicker(this.id)">IT 8</li>
-					<li class="navbar_list_item" id="it9" onClick="listClicker(this.id)">IT 9</li>
-					<li class="navbar_list_item" id="projects" onClick="listClicker(this.id)">Projects</li>
+					<li class="navbar_list_item" id="c912" tabindex="0" role="button" onClick="listClicker(this.id)">Computers 9-12</li>
+					<li class="navbar_list_item" id="it8" tabindex="0" role="button" onClick="listClicker(this.id)">IT 8</li>
+					<li class="navbar_list_item" id="it9" tabindex="0" role="button" onClick="listClicker(this.id)">IT 9</li>
+					<li class="navbar_list_item" id="projects" tabindex="0" role="button" onClick="listClicker(this.id)">Projects</li>
 					<li class="navbar_list_item" id="ladder"><a href="https://darcybrennan.pythonanywhere.com/" style="text-decoration: none; color: white;">Weather Station</a></li>
 				</ul>
 			</nav>
   			<div id="biggercontainer">
-				<div id="errormessage" style="
-					position: absolute;
-					bottom: 80px;
-					left: 50%;
-					transform: translateX(-50%);
-					background: #222;
-					color: #f33;
-					padding: 0.5rem 1rem;
-					border: 1px solid #f33;
-					font-family: monospace;
-					display: none;
-					border-radius: 4px;
-					">
+				<div id="errormessage" class="error-message">
 				</div>
  				<div class="consolecontainer">
 					<div id="consolescreen">
@@ -70,12 +62,12 @@
 							<div id="terminput" class="input-box">&nbsp;</div>
 							<div id="cursor" class="blinker" >&nbsp;</div>
 						</div>
-						 <input id="hiddenInput" type="text" autocomplete="off" spellcheck="false" style="position: absolute; opacity: 0; pointer-events: none;" />
+						 <input id="hiddenInput" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal command input" style="position: absolute; opacity: 0; pointer-events: none;" />
 					</div>
           <div class="pc">
             <div class="buttons">
 				<div class="barsbycomputers">Barsby Computers</div>
-              <div class="powerbutton" id="powerbtn" onClick="lightsOut()">&nbsp;
+              <div class="powerbutton" id="powerbtn" tabindex="0" role="button" aria-label="Toggle screen lights" onClick="lightsOut()">&nbsp;
               </div>
           </div>
 			</div>
