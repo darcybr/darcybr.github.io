@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Font Text in TinkerCAD | Mr. Brennan</title>
+    <meta name="description" content="Learn how to make 3D text with your own custom font in TinkerCAD.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/listclicker.js"></script>
+    <style>
+        /* Page-specific styles, scoped to .fontTut so the rest of the site is unaffected */
+        .fontTut {
+            max-width: 480px;
+            margin: 7rem auto 3rem;
+            padding: 0 1rem 3rem;
+            color: var(--text-1, #eee);
+            font-family: "Source Sans 3", sans-serif;
+        }
+        .fontTut h1.pageTitle {
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 1.6rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+        .fontTut .intro {
+            text-align: center;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .fontTut .sectionCard {
+            background: var(--surface-1, #2c2a30);
+            border-radius: 1rem;
+            box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.35);
+            padding: 1.25rem 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .fontTut .sectionHeader {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .fontTut .sectionNum {
+            flex: 0 0 auto;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            background: #4da6ff;
+            color: #111;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fontTut .sectionHeader h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .fontTut .stepIcon {
+            display: block;
+            margin: 0.75rem auto;
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+        }
+        .fontTut ol.steps {
+            padding-left: 1.4rem;
+            margin: 0.75rem 0;
+        }
+        .fontTut ol.steps li {
+            margin-bottom: 0.9rem;
+            line-height: 1.45;
+            font-size: 1rem;
+        }
+        .fontTut .site-link {
+            font-weight: bold;
+            color: #4da6ff;
+            text-decoration: underline;
+        }
+        .fontTut .tip {
+            background: #3a3140;
+            border-left: 4px solid #f7c948;
+            padding: 0.75rem 1rem;
+            border-radius: 0.4rem;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+        .fontTut .tip strong {
+            color: #f7c948;
+        }
+        .fontTut .backLink {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="mrbnavbar">
+        <ul class="navbar_list">
+            <li class="navbar_list_logo" id="logo" tabindex="0" role="button" aria-label="Home" onClick="listClicker(this.id)">
+                <svg viewBox="50 50 50 25" xmlns="http://www.w3.org/2000/svg" aria-label="MRB Logo" role="img" class="logoname">
+                    <g stroke-width=".26458">
+                        <path d="m54.872 55.49h-3.906v16.053h2.9803v-4.3801l-0.29351-7.5635 3.906 11.944h2.032l3.8834-11.966-0.27093 7.5861v4.3801h2.9803v-16.053h-3.9285l-3.6576 11.65z"/>
+                        <path d="m77.603 60.344c0-0.79022-0.11289-1.4901-0.36125-2.0997-0.74506-1.874-2.5287-2.7545-4.9671-2.7545h-5.3735v16.053h2.9803v-5.8702h2.3932l2.6868 5.8702h3.206v-0.15804l-3.1383-6.5476c1.5353-0.79022 2.5739-2.0094 2.5739-4.493zm-2.9577 0.27093c0 1.5804-0.94827 2.3707-2.3707 2.3707h-2.3932v-4.8091h2.3932c1.5127 0 2.3707 0.83538 2.3707 2.4384z"/>
+                        <path d="m92.704 66.824c0-1.9417-0.97084-3.1383-2.3932-3.5447 1.174-0.49671 2.0546-1.6256 2.0546-3.3867 0-0.74507-0.11289-1.3998-0.36125-1.9417-0.79022-1.7611-2.5964-2.461-4.9897-2.461h-5.0574v16.053h5.5316c3.1157 0 5.2155-1.3998 5.2155-4.7188zm-2.9803-0.0226c0 1.4224-0.92569 2.0772-2.2352 2.0772h-2.5513v-4.3349h2.6642c1.3998 0 2.1223 0.72249 2.1223 2.2578zm-0.33867-6.5701c0 1.4224-0.90311 1.9643-2.2578 1.9868h-2.19v-4.0414h2.0772c1.4901 0 2.3707 0.47413 2.3707 2.0546z"/>
+                    </g>
+                </svg>
+            </li>
+            <li class="navbar_list_course" id="camp" tabindex="0" role="button" onClick="listClicker(this.id)">Summer Camp</li>
+        </ul>
+    </nav>
+
+    <div class="fontTut">
+        <h1 class="pageTitle">Make Text With Your Own Cool Font in TinkerCAD! 🎨</h1>
+        <p class="intro">Want your name or a word to look totally different — spooky, bubbly, blocky, whatever you like? You can bring ANY font into TinkerCAD and turn it into a 3D shape. Here's how, in 3 easy parts.</p>
+
+        <!-- SECTION 1: Download a font -->
+        <div class="sectionCard">
+            <div class="sectionHeader">
+                <div class="sectionNum">1</div>
+                <h2>Find &amp; Download a Font</h2>
+            </div>
+
+            <svg class="stepIcon" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="20" width="220" height="70" rx="10" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <text x="120" y="65" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#66FF66">Aa</text>
+                <path d="M120 95 L120 125 M105 112 L120 128 L135 112" stroke="#f7c948" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <ol class="steps">
+                <li>Go to <span class="site-link">dafont.com</span> on your computer.</li>
+                <li>Type something into the search bar to find a font style you like — try "bubble," "spooky," or "block."</li>
+                <li>Click on a font's name to see a bigger preview.</li>
+                <li>Click the green <strong>Download</strong> button.</li>
+                <li>The font will download as a <strong>.zip</strong> file into your <strong>Downloads</strong> folder.</li>
+            </ol>
+
+            <div class="tip"><strong>Tip:</strong> Pick a font that isn't too thin or too fancy — simple, bold shapes work best for 3D printing!</div>
+        </div>
+
+        <!-- SECTION 2: Unzip and convert to SVG -->
+        <div class="sectionCard">
+            <div class="sectionHeader">
+                <div class="sectionNum">2</div>
+                <h2>Unzip It &amp; Convert to SVG</h2>
+            </div>
+
+            <svg class="stepIcon" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 40 h50 l10 -12 h50 v70 h-110 z" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <text x="75" y="80" text-anchor="middle" font-family="monospace" font-size="16" fill="#66FF66">.ttf</text>
+                <path d="M120 75 h50" stroke="#f7c948" stroke-width="6" stroke-linecap="round"/>
+                <path d="M160 65 l15 10 l-15 10" stroke="#f7c948" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="185" y="40" width="45" height="55" rx="6" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <text x="207" y="72" text-anchor="middle" font-family="monospace" font-size="14" fill="#66FF66">.svg</text>
+            </svg>
+
+            <ol class="steps">
+                <li>Find the .zip file you just downloaded (check your <strong>Downloads</strong> folder).</li>
+                <li>Right-click the .zip file and choose <strong>Extract All</strong> (Windows) or double-click it (Mac) to unzip it.</li>
+                <li>Open the unzipped folder. Look for a file that ends in <strong>.ttf</strong> or <strong>.otf</strong> — that's your font file!</li>
+                <li>Go to <span class="site-link">cloudconvert.com</span> on your computer.</li>
+                <li>Click <strong>Select File</strong> and choose your .ttf or .otf font file.</li>
+                <li>Change the "Convert to" format to <strong>SVG</strong>.</li>
+                <li>Click <strong>Convert</strong>, then click <strong>Download</strong> to save your new SVG file. Make sure it saves to your <strong>Downloads</strong> folder.</li>
+            </ol>
+
+            <div class="tip"><strong>Tip:</strong> The file name matters — remember what you named your SVG so you can find it in the next step!</div>
+        </div>
+
+        <!-- SECTION 3: Bring it into TinkerCAD -->
+        <div class="sectionCard">
+            <div class="sectionHeader">
+                <div class="sectionNum">3</div>
+                <h2>Bring It Into TinkerCAD</h2>
+            </div>
+
+            <svg class="stepIcon" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="120,20 190,55 190,105 120,130 50,105 50,55" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <text x="120" y="82" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="34" fill="#66FF66">Hi!</text>
+            </svg>
+
+            <ol class="steps">
+                <li>Go to <span class="site-link">tinkercad.com</span> and open your design.</li>
+                <li>On the right side of the screen, click <strong>Shape Generators</strong>.</li>
+                <li>Scroll down to the <strong>Text</strong> category and find <strong>Custom Font Text</strong>.</li>
+                <li>Drag <strong>Custom Font Text</strong> onto your workplane.</li>
+                <li>Click on the shape, then find the <strong>Add SVG</strong> button in its properties panel.</li>
+                <li>Upload the SVG font file you saved in Section 2.</li>
+                <li>Type your text into the text box — it will magically appear in your new font!</li>
+                <li>Resize and move it just like any other shape.</li>
+            </ol>
+
+            <div class="tip"><strong>Tip:</strong> If your text looks strange or doesn't show up, double check you uploaded the <strong>.svg</strong> file (not the .ttf) in this step.</div>
+        </div>
+
+        <p class="backLink"><a href="camp.html" class="site-link">&larr; Back to Camp Page</a></p>
+    </div>
+</body>
+</html>
