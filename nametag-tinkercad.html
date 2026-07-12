@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Name Tag in TinkerCAD | Mr. Brennan</title>
+    <meta name="description" content="Step by step instructions for making a 3D printed name tag in TinkerCAD, including a hole-tool challenge.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/listclicker.js"></script>
+    <style>
+        /* Page-specific styles, scoped to .nameTag so the rest of the site is unaffected */
+        .nameTag {
+            max-width: 480px;
+            margin: 7rem auto 3rem;
+            padding: 0 1rem 3rem;
+            color: var(--text-1, #eee);
+            font-family: "Source Sans 3", sans-serif;
+        }
+        .nameTag h1.pageTitle {
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 1.6rem;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+        .nameTag .intro {
+            text-align: center;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        .nameTag .videoWrap {
+            margin-bottom: 2rem;
+        }
+        .nameTag .videoWrap iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            border-radius: 0.6rem;
+        }
+        .nameTag .sectionCard {
+            background: var(--surface-1, #2c2a30);
+            border-radius: 1rem;
+            box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.35);
+            padding: 1.25rem 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .nameTag .sectionHeader {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .nameTag .sectionNum {
+            flex: 0 0 auto;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 50%;
+            background: #4da6ff;
+            color: #111;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nameTag .sectionCard.challenge .sectionNum {
+            background: #f7c948;
+        }
+        .nameTag .sectionHeader h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nameTag .stepIcon {
+            display: block;
+            margin: 0.75rem auto;
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+        }
+        .nameTag ol.steps {
+            padding-left: 1.4rem;
+            margin: 0.75rem 0;
+        }
+        .nameTag ol.steps li {
+            margin-bottom: 0.9rem;
+            line-height: 1.45;
+            font-size: 1rem;
+        }
+        .nameTag .site-link {
+            font-weight: bold;
+            color: #4da6ff;
+            text-decoration: underline;
+        }
+        .nameTag .tip {
+            background: #3a3140;
+            border-left: 4px solid #f7c948;
+            padding: 0.75rem 1rem;
+            border-radius: 0.4rem;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+        .nameTag .tip strong {
+            color: #f7c948;
+        }
+        .nameTag .challengeBadge {
+            display: inline-block;
+            background: #f7c948;
+            color: #111;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .nameTag .fontPromo {
+            background: linear-gradient(135deg, #3a3140, #23202a);
+            border: 2px solid #4da6ff;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .nameTag .fontPromo p {
+            margin-bottom: 0.75rem;
+        }
+        .nameTag .backLink {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="mrbnavbar">
+        <ul class="navbar_list">
+            <li class="navbar_list_logo" id="logo" tabindex="0" role="button" aria-label="Home" onClick="listClicker(this.id)">
+                <svg viewBox="50 50 50 25" xmlns="http://www.w3.org/2000/svg" aria-label="MRB Logo" role="img" class="logoname">
+                    <g stroke-width=".26458">
+                        <path d="m54.872 55.49h-3.906v16.053h2.9803v-4.3801l-0.29351-7.5635 3.906 11.944h2.032l3.8834-11.966-0.27093 7.5861v4.3801h2.9803v-16.053h-3.9285l-3.6576 11.65z"/>
+                        <path d="m77.603 60.344c0-0.79022-0.11289-1.4901-0.36125-2.0997-0.74506-1.874-2.5287-2.7545-4.9671-2.7545h-5.3735v16.053h2.9803v-5.8702h2.3932l2.6868 5.8702h3.206v-0.15804l-3.1383-6.5476c1.5353-0.79022 2.5739-2.0094 2.5739-4.493zm-2.9577 0.27093c0 1.5804-0.94827 2.3707-2.3707 2.3707h-2.3932v-4.8091h2.3932c1.5127 0 2.3707 0.83538 2.3707 2.4384z"/>
+                        <path d="m92.704 66.824c0-1.9417-0.97084-3.1383-2.3932-3.5447 1.174-0.49671 2.0546-1.6256 2.0546-3.3867 0-0.74507-0.11289-1.3998-0.36125-1.9417-0.79022-1.7611-2.5964-2.461-4.9897-2.461h-5.0574v16.053h5.5316c3.1157 0 5.2155-1.3998 5.2155-4.7188zm-2.9803-0.0226c0 1.4224-0.92569 2.0772-2.2352 2.0772h-2.5513v-4.3349h2.6642c1.3998 0 2.1223 0.72249 2.1223 2.2578zm-0.33867-6.5701c0 1.4224-0.90311 1.9643-2.2578 1.9868h-2.19v-4.0414h2.0772c1.4901 0 2.3707 0.47413 2.3707 2.0546z"/>
+                    </g>
+                </svg>
+            </li>
+            <li class="navbar_list_course" id="camp" tabindex="0" role="button" onClick="listClicker(this.id)">Summer Camp</li>
+        </ul>
+    </nav>
+
+    <div class="nameTag">
+        <h1 class="pageTitle">Make Your Own Name Tag in TinkerCAD! 🏷️</h1>
+        <p class="intro">Follow these steps to build a flat name tag with your name on it — perfect for your bag, your desk, or a gift!</p>
+
+        <div class="videoWrap">
+            <iframe src="https://www.youtube.com/embed/szmhRiDEzoA?si=Aeh-TS942KiycNHD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- SECTION 1: Make the base shape -->
+        <div class="sectionCard">
+            <div class="sectionHeader">
+                <div class="sectionNum">1</div>
+                <h2>Make the Base Shape</h2>
+            </div>
+
+            <svg class="stepIcon" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="45" width="160" height="70" rx="6" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <polygon points="40,45 60,25 220,25 200,45" fill="#4a4150" stroke="#4da6ff" stroke-width="3"/>
+                <polygon points="200,45 220,25 220,95 200,115" fill="#332c3a" stroke="#4da6ff" stroke-width="3"/>
+            </svg>
+
+            <ol class="steps">
+                <li>Open <span class="site-link">tinkercad.com</span> and start a new design.</li>
+                <li>On the right side, find the <strong>Basic Shapes</strong> panel and drag a <strong>Box</strong> onto the workplane.</li>
+                <li>Click on the box to select it. Small white boxes (handles) will appear on its corners and edges — these let you resize it.</li>
+                <li>Look for the shape's dimensions. You can usually click directly on the shape's numbers, or use the side/corner handles to type exact sizes.</li>
+                <li>Set the size to <strong>60 x 60 x 2 mm</strong> (a square tag) — or if you'd rather have a longer rectangle name tag, use <strong>60 x 30 x 2 mm</strong> instead.</li>
+                <li>This flat box is your name tag's <strong>base</strong>.</li>
+            </ol>
+
+            <div class="tip"><strong>Tip:</strong> The first number is usually length, the second is width, and the third is height. A height of 2mm keeps your tag thin and light.</div>
+        </div>
+
+        <!-- SECTION 2: Add text -->
+        <div class="sectionCard">
+            <div class="sectionHeader">
+                <div class="sectionNum">2</div>
+                <h2>Add Your Name With Text</h2>
+            </div>
+
+            <svg class="stepIcon" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="70" width="180" height="40" rx="6" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <text x="120" y="55" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="40" fill="#66FF66">Abc</text>
+            </svg>
+
+            <ol class="steps">
+                <li>In the shapes panel, find the <strong>Text</strong> tool (it looks like the letter "A") and drag it onto your base, right on top.</li>
+                <li>Click the text and type your name (or a nickname) into the text box that appears.</li>
+                <li>Use the handles to resize the text so it fits nicely on your base — not too big, not too tiny.</li>
+                <li>Move the text so it sits centered on top of the base. Use the little black arrow (the up/down handle) to raise the text slightly so it's sitting on top of the box, not sunk inside it.</li>
+                <li>When it looks right, select <strong>both</strong> the base and the text (click one, then hold <strong>Shift</strong> and click the other), and click <strong>Group</strong> to combine them into one shape.</li>
+            </ol>
+
+            <div class="tip"><strong>Tip:</strong> Want your name in a totally different style? Check out the Custom Font page linked below!</div>
+        </div>
+
+        <!-- CHALLENGE SECTION: Hole tool -->
+        <div class="sectionCard challenge">
+            <div class="challengeBadge">✨ Added Challenge</div>
+            <div class="sectionHeader">
+                <div class="sectionNum">3</div>
+                <h2>Cut a Star or Triangle With the Hole Tool</h2>
+            </div>
+
+            <svg class="stepIcon" viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="30" width="180" height="80" rx="6" fill="#3a3140" stroke="#4da6ff" stroke-width="3"/>
+                <polygon points="120,45 129,65 151,65 133,78 140,99 120,86 100,99 107,78 89,65 111,65" fill="none" stroke="#f7c948" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+
+            <p>In TinkerCAD, every shape can be either a <strong>solid</strong> (something you can see and touch) or a <strong>hole</strong> (something that cuts through other shapes, like a cookie cutter). This is called <strong>negative space</strong> — using an empty shape to remove material instead of add it.</p>
+
+            <ol class="steps">
+                <li>Drag a <strong>Star</strong> or <strong>Polygon</strong> (triangle) shape from the Basic Shapes panel onto your workplane, near your name tag.</li>
+                <li>With the star or triangle selected, click the <strong>"Solid"</strong> button in its properties box and change it to <strong>"Hole"</strong>. It will turn see-through with red stripes — that means it's ready to cut.</li>
+                <li>Resize the hole shape so it's small enough to fit somewhere on your name tag (maybe in a corner, or between letters).</li>
+                <li>Move the hole shape so it overlaps your base. Make sure it's tall enough to go all the way through the base (raise or stretch it if needed) — if it doesn't fully poke through both sides, it won't cut all the way.</li>
+                <li>Select <strong>both</strong> your name tag and the hole shape, then click <strong>Group</strong>. The star or triangle will disappear, leaving a cutout shape in your name tag!</li>
+            </ol>
+
+            <div class="tip"><strong>Tip:</strong> You can add more than one hole shape before grouping — try cutting out a few stars for a fun pattern!</div>
+        </div>
+
+        <div class="fontPromo">
+            <p>Want your name tag text in a totally unique font — spooky, bubbly, or blocky?</p>
+            <p><a href="custom-font-tinkercad.html" class="site-link">Check out the Custom Font page &rarr;</a></p>
+        </div>
+
+        <p class="backLink"><a href="camp.html" class="site-link">&larr; Back to Camp Page</a></p>
+    </div>
+</body>
+</html>
