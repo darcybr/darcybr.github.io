@@ -48,16 +48,19 @@ $(document).ready(function() {
             projects: 'projects.html',
             weather_station: 'https://darcybrennan.pythonanywhere.com',
         }
+        /* Scavenger hunt quote-finding commands - commented out, game paused for now
         const secretCommands = [
             "secret",
         ]
         const superSecretCommands = [
             "67"
         ]
+        */
       const consoleScreen = document.getElementById("helloworld");
       if (cmd in validCommands) {
         window.location.href = validCommands[cmd];
       } 
+      /* Scavenger hunt quote reveals - commented out, game paused for now
       else if (secretCommands.includes(cmd)) {
         //Change Text Here...
         const quoteHTML = 'For what you see and what you hear depends a good deal on where you are standing. It also depends on what kind of person you are. - C.S. Lewis';
@@ -67,6 +70,7 @@ $(document).ready(function() {
         const quoteHTML = 'GO AWAY - Mr. B';
         consoleScreen.innerHTML = quoteHTML;
       }
+      */
       else {
         commandNotFound(`Command not found: ${cmd}`);
       }
