@@ -103,6 +103,41 @@
             margin-top: 1rem;
             font-size: 1rem;
         }
+        .fontTut .sectionNum {
+            cursor: pointer;
+            transition: transform 0.15s ease, background-color 0.2s ease;
+            user-select: none;
+        }
+        .fontTut .sectionNum:active {
+            transform: scale(0.88);
+        }
+        .fontTut .sectionNum.done {
+            background: #5cd65c;
+        }
+        .fontTut .stepIcon {
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+        @keyframes fontTutWiggle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(-6deg) scale(1.03); }
+            40% { transform: rotate(5deg) scale(1.03); }
+            60% { transform: rotate(-4deg) scale(1.02); }
+            80% { transform: rotate(3deg) scale(1.01); }
+        }
+        .fontTut .stepIcon.wiggle {
+            animation: fontTutWiggle 0.5s ease;
+        }
+        .confetti-piece {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
@@ -206,5 +241,72 @@
 
         <p class="backLink"><a href="camp.html" class="site-link">&larr; Back to Camp Page</a></p>
     </div>
+
+    <script>
+    (function () {
+        var scope = document.querySelector('.fontTut');
+        if (!scope) return;
+
+        var nums = scope.querySelectorAll('.sectionNum');
+        nums.forEach(function (num, idx) {
+            var original = num.textContent;
+            num.setAttribute('tabindex', '0');
+            num.setAttribute('role', 'button');
+            num.setAttribute('aria-label', 'Mark section ' + original + ' as done');
+            function toggleDone() {
+                var isLast = idx === nums.length - 1;
+                var nowDone = num.classList.toggle('done');
+                num.textContent = nowDone ? '✓' : original;
+                num.setAttribute('aria-pressed', nowDone ? 'true' : 'false');
+                if (nowDone && isLast) {
+                    launchConfetti();
+                }
+            }
+            num.addEventListener('click', toggleDone);
+            num.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleDone();
+                }
+            });
+        });
+
+        var icons = scope.querySelectorAll('.stepIcon');
+        icons.forEach(function (icon) {
+            icon.addEventListener('click', function () {
+                icon.classList.remove('wiggle');
+                void icon.getBBox && icon.getBBox();
+                requestAnimationFrame(function () {
+                    icon.classList.add('wiggle');
+                });
+            });
+            icon.addEventListener('animationend', function () {
+                icon.classList.remove('wiggle');
+            });
+        });
+
+        function launchConfetti() {
+            var colors = ['#4da6ff', '#f7c948', '#66FF66', '#ff6b6b', '#c084fc'];
+            for (var i = 0; i < 30; i++) {
+                (function () {
+                    var piece = document.createElement('div');
+                    piece.className = 'confetti-piece';
+                    var startX = Math.random() * 100;
+                    var drift = (Math.random() - 0.5) * 200;
+                    var duration = 1400 + Math.random() * 900;
+                    piece.style.left = startX + 'vw';
+                    piece.style.top = '-10px';
+                    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    document.body.appendChild(piece);
+                    var anim = piece.animate([
+                        { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+                        { transform: 'translate(' + drift + 'px, 100vh) rotate(' + (Math.random() * 480 - 240) + 'deg)', opacity: 0.9 }
+                    ], { duration: duration, easing: 'ease-in' });
+                    anim.onfinish = function () { piece.remove(); };
+                })();
+            }
+        }
+    })();
+    </script>
 </body>
 </html>
