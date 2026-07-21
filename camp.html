@@ -52,6 +52,55 @@
 			@media (prefers-reduced-motion: reduce) {
 				#rocketLaunch { animation: none; display: none; }
 			}
+			.suggestGrid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1.25rem;
+				justify-content: center;
+				margin: 1.5rem 0 2rem;
+			}
+			.suggestCard {
+				position: relative;
+				display: block;
+				width: 220px;
+				text-decoration: none;
+				color: inherit;
+				background: var(--surface-1);
+				border-radius: 1rem;
+				overflow: hidden;
+				box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.35);
+				transition: transform 0.15s ease;
+			}
+			.suggestCard:hover, .suggestCard:focus {
+				transform: translateY(-4px);
+			}
+			.suggestCard .suggestNum {
+				position: absolute;
+				top: 0.5rem;
+				left: 0.5rem;
+				width: 2rem;
+				height: 2rem;
+				border-radius: 50%;
+				background: #f7c948;
+				color: #111;
+				font-weight: bold;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 2;
+			}
+			.suggestCard img {
+				width: 100%;
+				height: 124px;
+				object-fit: cover;
+				display: block;
+			}
+			.suggestCard .suggestTitle {
+				padding: 0.75rem;
+				font-weight: bold;
+				font-size: 1.05rem;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
@@ -96,6 +145,26 @@
 				<div class="container">
 					<h1>Welcome to 3D Printing Camp!</h1>
 					<h2 style="opacity:0.85;">Wednesday</h2>
+
+					<h2 style="text-align:center;">Not sure what to build? Try one of these!</h2>
+					<div class="suggestGrid">
+						<a class="suggestCard" href="https://www.youtube.com/watch?v=fq31qg44HQM" target="_blank" rel="noopener">
+							<div class="suggestNum">1</div>
+							<img src="https://img.youtube.com/vi/fq31qg44HQM/hqdefault.jpg" alt="Panda in TinkerCAD tutorial thumbnail">
+							<div class="suggestTitle">🐼 Panda</div>
+						</a>
+						<a class="suggestCard" href="https://www.youtube.com/watch?v=kighkKcgyuo" target="_blank" rel="noopener">
+							<div class="suggestNum">2</div>
+							<img src="https://img.youtube.com/vi/kighkKcgyuo/hqdefault.jpg" alt="Ice Cream Cone in TinkerCAD tutorial thumbnail">
+							<div class="suggestTitle">🍦 Ice Cream Cone</div>
+						</a>
+						<a class="suggestCard" href="https://www.youtube.com/watch?v=B9XvgnYoVlw" target="_blank" rel="noopener">
+							<div class="suggestNum">3</div>
+							<img src="https://img.youtube.com/vi/B9XvgnYoVlw/hqdefault.jpg" alt="3D Printable Dinosaur in TinkerCAD tutorial thumbnail">
+							<div class="suggestTitle">🦖 Dinosaur</div>
+						</a>
+					</div>
+
 					<h2>Your login is your first name and last initial (like "jordans"), or just your first name if your teacher told you to use that.</h2>
 					<h2>Sign up to TinkerCAD as a Student<br/>Use the nickname "yourname123"</h2>
 					<h2>CLICK HERE to go to <a href="https://www.tinkercad.com/joinclass/ZDFZXWEPB">TinkerCAD</a></h2>
