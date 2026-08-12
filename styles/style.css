@@ -42,28 +42,36 @@ body{
     padding: var(--size-fluid-1);
     border-radius: var(--radius-1);
 }
+/* Container for the retro computer art. container-type lets every
+   descendant below scale using cqw (percent of THIS box's width),
+   so the whole scene - screen, text, case, button - grows and shrinks
+   together and looks the same shape on phones and desktops alike. */
 .consolecontainer {
-  align-items: center;
+    container-type: inline-size;
+    align-items: center;
     display:flex;
     flex-direction: column;
-    height: 75vh;
-    margin-top:8em;
-    width: 60vh;
+    width: min(92vw, 480px);
+    margin: 8em auto 2rem;
 }
 
+/* Fixed 4:3 aspect ratio, driven purely by the container's width, so
+   the screen is never stretched or squashed regardless of viewport
+   orientation or size. */
 #consolescreen {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 25vw;
-  height: 45vh;
-  border: 3vh outset #d3d3d3;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  border: 3cqw outset #d3d3d3;
   background: radial-gradient(ellipse at bottom, #00000033, transparent),
               radial-gradient(ellipse at top, #064721, transparent);
   box-shadow: 
-    inset 0 0 2vh rgba(0, 255, 128, 0.2),
-    0 1.5vh 3vh rgba(0, 0, 0, 0.3);
-  border-radius: 1vh;
+    inset 0 0 2cqw rgba(0, 255, 128, 0.2),
+    0 1.5cqw 3cqw rgba(0, 0, 0, 0.3);
+  border-radius: 1cqw;
   overflow: hidden;
 
 
@@ -73,16 +81,19 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  border: 0.5vh outset #d3d3d3;
+  border: 0.5cqw outset #d3d3d3;
   background: radial-gradient(ellipse at bottom, #4e494900, transparent),
               radial-gradient(ellipse at top, #edf1ef, transparent);
-  box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.1), 0 0.5vh 1vh rgba(0, 0, 0, 0.05);
-  border-radius: 1vh;
+  box-shadow: 0 1cqw 2cqw rgba(0, 0, 0, 0.1), 0 0.5cqw 1cqw rgba(0, 0, 0, 0.05);
+  border-radius: 1cqw;
 }
 .screenFlicker {
   animation: screenFlicker 0.3s ease-in-out;
 }
 
+/* Text inside the screen scales with cqw (the console box's own width)
+   instead of the viewport, so it stays proportional to the screen art
+   itself on any device. */
 .input-box {
     min-width: 1ch;
     flex: 0 1 auto;
@@ -92,7 +103,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    font-size: clamp(0.875em, 2.5vw, 1em);
+    font-size: clamp(0.75rem, 6cqw, 1.5rem);
     font-variation-settings:
       "ELGR" 1,
       "ELSH" 2;
@@ -108,7 +119,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    font-size: clamp(0.875em, 2.5vw, 1em);
+    font-size: clamp(0.75rem, 6cqw, 1.5rem);
     font-variation-settings:
       "ELGR" 1,
       "ELSH" 2;
@@ -372,37 +383,37 @@ p{
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3vh
+  padding: 3cqw;
 }
 .powerbutton {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 6vh;
-  width: 6vh;
-  padding: 0.5vh;
+  height: 6cqw;
+  width: 6cqw;
+  padding: 0.5cqw;
   background-color: #ff4d4d; /* soft red */
   border: none;
   border-radius: 50%;
-  box-shadow: 0 0.3vh 1vh rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.3cqw 1cqw rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 .powerbutton:hover {
   transform: scale(1.05);
-  box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.5cqw 1.5cqw rgba(0, 0, 0, 0.4);
 }
 
 .powerbutton:active {
   transform: scale(0.95);
-  box-shadow: inset 0 0.3vh 0.6vh rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0.3cqw 0.6cqw rgba(0, 0, 0, 0.3);
 }
 .barsbycomputers {
 
   font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
-  font-size: clamp(.25em, 5vw, 2.5vw);
+  font-size: clamp(0.65rem, 5cqw, 1.4rem);
   font-style: normal;
   padding-right: 10px;
 }
