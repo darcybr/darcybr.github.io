@@ -493,6 +493,30 @@ p{
     max-width: 100%;
     border-radius: var(--radius-2);
 }
+/* Blender Character panel: images sit in a row but must never overflow
+   the panel. Flex items don't shrink below their intrinsic content size
+   by default (min-width:auto), which is what let wide images push past
+   the panel edge even with max-width:100% on each <img>. Setting
+   min-width:0 and flex:1 1 0 lets each image shrink freely and share
+   the row's width evenly, while object-fit keeps them from distorting.
+   Wrapping on narrow screens keeps things from getting too squished. */
+.blender-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1vh 0;
+    width: 100%;
+}
+.blender-gallery img {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: var(--radius-2);
+}
 .contact-card {
   background: var(--surface-1);
   border: 1px solid var(--surface-3);
